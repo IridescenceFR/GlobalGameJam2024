@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnggq8r54lmmq"]
+
+[ext_resource type="Script" path="res://Spectateur/Scripts/Spectateur.gd" id="1_5uy1o"]
+[ext_resource type="Texture2D" uid="uid://b2tnokscp4t0d" path="res://Spectateur/Sprites/580b57fcd9996e24bc43c325.png" id="1_cftyw"]
+[ext_resource type="Texture2D" uid="uid://8h52chhdblvc" path="res://Spectateur/Sprites/rouge.png" id="2_yqmed"]
+[ext_resource type="Texture2D" uid="uid://dry7u2nc1vpmi" path="res://Spectateur/Sprites/bleu.jpg" id="3_i55la"]
+[ext_resource type="Texture2D" uid="uid://cteqbkedn3h7y" path="res://Spectateur/Sprites/vert.webp" id="4_4m6d4"]
+
+[node name="Spectateur" type="Node2D"]
+script = ExtResource("1_5uy1o")
+
+[node name="SpectateurSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0865686, 0.0865686)
+texture = ExtResource("1_cftyw")
+
+[node name="ColorRedSprite2D" type="Sprite2D" parent="SpectateurSprite2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-34.6581, -7.64095)
+scale = Vector2(5.64744, 5.78485)
+texture = ExtResource("2_yqmed")
+
+[node name="ColorVertSprite2D" type="Sprite2D" parent="SpectateurSprite2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-28.8789, 69.3091)
+scale = Vector2(1.97265, 2.16813)
+texture = ExtResource("4_4m6d4")
+
+[node name="ColorBleuSprite2D" type="Sprite2D" parent="SpectateurSprite2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-11.5516, 23.1028)
+scale = Vector2(2.64723, 2.74349)
+texture = ExtResource("3_i55la")
+
+[node name="TimeShowColor" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="TimerHideColor" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="TimeShowColor" to="." method="_on_timer_show_color_timeout"]
+[connection signal="timeout" from="TimerHideColor" to="." method="_on_timer_hide_color_timeout"]

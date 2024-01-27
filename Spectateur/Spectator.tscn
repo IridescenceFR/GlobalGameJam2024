@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnggq8r54lmmq"]
+
+[ext_resource type="Script" path="res://Spectateur/Scripts/Spectator.gd" id="1_5uy1o"]
+[ext_resource type="Texture2D" uid="uid://bu18gg7lwj41s" path="res://Spectateur/Sprites/Spectateur1.png" id="2_1dyp0"]
+
+[node name="Spectator" type="Node2D"]
+script = ExtResource("1_5uy1o")
+idleSpeed = 100.0
+idleRange = 10
+speedRange = 10
+
+[node name="SpectatorSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1dyp0")

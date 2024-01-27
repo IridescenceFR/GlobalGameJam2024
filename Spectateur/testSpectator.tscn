@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ytysd3r4yf4"]
+
+[ext_resource type="Script" path="res://Spectateur/Scripts/testSpectator.gd" id="1_i7npb"]
+[ext_resource type="Texture2D" uid="uid://cg4uyo7kv8xju" path="res://Spectateur/Sprites/Scene.png" id="3_pgwfg"]
+
+[node name="TestSpectator" type="Node2D"]
+script = ExtResource("1_i7npb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 540)
+texture = ExtResource("3_pgwfg")
+metadata/_edit_lock_ = true
