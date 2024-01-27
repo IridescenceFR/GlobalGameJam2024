@@ -79,7 +79,7 @@ func _process(delta):
 
 func show_aura():
 	get_child(0).add_child(Sprite2D.new())
-	get_child(0).get_child(0).position.y -= 30
+	get_child(0).get_child(0).position.y -= 20
 	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
 
 	
