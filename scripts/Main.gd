@@ -24,7 +24,7 @@ func spawn_bubble():
 		var bubble = bubble_scene.instantiate()
 		bubble.color = color
 		bubble.position = Vector2(410 + pos_x, 200)
-		bubble.connect_to_parent(self)
+		bubble.connect_to_parent(self, color)
 		add_child(bubble)
 		pos_x += 400
 
