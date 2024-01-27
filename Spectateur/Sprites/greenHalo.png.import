@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj352tuywj1o8"
-path="res://.godot/imported/redAura.png-f6cc4bb6fbd1a0c5652a046e4c5e566d.ctex"
+uid="uid://p55obb2wu1l5"
+path="res://.godot/imported/greenHalo.png-58bab86b15296d0e5561852d1781312b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spectateur/Sprites/redAura.png"
-dest_files=["res://.godot/imported/redAura.png-f6cc4bb6fbd1a0c5652a046e4c5e566d.ctex"]
+source_file="res://Spectateur/Sprites/greenHalo.png"
+dest_files=["res://.godot/imported/greenHalo.png-58bab86b15296d0e5561852d1781312b.ctex"]
 
 [params]
 

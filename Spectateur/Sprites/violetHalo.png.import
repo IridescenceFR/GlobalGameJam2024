@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tvrp007x3v5h"
-path="res://.godot/imported/blueAura.png-b04f5f3de56f222aa360008aa8a41bec.ctex"
+uid="uid://cgnk4ng6p5p4y"
+path="res://.godot/imported/violetHalo.png-8318be6c5a4a141eedebff2bf2314d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spectateur/Sprites/blueAura.png"
-dest_files=["res://.godot/imported/blueAura.png-b04f5f3de56f222aa360008aa8a41bec.ctex"]
+source_file="res://Spectateur/Sprites/violetHalo.png"
+dest_files=["res://.godot/imported/violetHalo.png-8318be6c5a4a141eedebff2bf2314d3d.ctex"]
 
 [params]
 
