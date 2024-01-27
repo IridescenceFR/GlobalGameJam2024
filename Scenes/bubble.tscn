@@ -1,17 +1,23 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckjq0ruu3ovpt"]
 
-[ext_resource type="Script" path="res://scripts/showJoke.gd" id="1_5p1fy"]
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_w28qf"]
 
-[node name="Button" type="Button"]
+[node name="Bubble" type="Button"]
 visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 text = "bla bla bla"
+script = ExtResource("1_w28qf")
 
 [node name="showJoke" type="Timer" parent="."]
 wait_time = 3.0
+one_shot = true
 autostart = true
-script = ExtResource("1_5p1fy")
 
 [node name="hideJoke" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 6.0
+one_shot = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="showJoke" to="." method="_on_show_joke_timeout"]
+[connection signal="timeout" from="hideJoke" to="." method="_on_hide_joke_timeout"]
