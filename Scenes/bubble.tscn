@@ -1,23 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://7abqwmh6dkp6"]
+[gd_scene load_steps=9 format=3 uid="uid://ckjq0ruu3ovpt"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_w28qf"]
+[ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="1_w45s5"]
+[ext_resource type="Texture2D" uid="uid://cr3iryw8b05us" path="res://assets/Bubble_left.png" id="2_lsxqp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61icd"]
+texture = ExtResource("2_lsxqp")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_878ym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58635"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_as1hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e22h2"]
 
 [node name="Bubble" type="Button"]
-visible = false
-offset_right = 8.0
-offset_bottom = 8.0
-text = "bla bla bla"
+top_level = true
+clip_children = 2
+offset_left = 246.0
+offset_top = 167.0
+offset_right = 509.0
+offset_bottom = 332.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_w45s5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_61icd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_878ym")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_58635")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_as1hf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e22h2")
+text = "blablabla"
 script = ExtResource("1_w28qf")
 
-[node name="showJoke" type="Timer" parent="."]
-wait_time = 3.0
+[node name="hideJoke" type="Timer" parent="."]
+wait_time = 100.0
 one_shot = true
 autostart = true
 
-[node name="hideJoke" type="Timer" parent="."]
-wait_time = 6.0
-one_shot = true
-
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="timeout" from="showJoke" to="." method="_on_show_joke_timeout"]
 [connection signal="timeout" from="hideJoke" to="." method="_on_hide_joke_timeout"]
