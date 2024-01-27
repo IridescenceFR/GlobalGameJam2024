@@ -8,14 +8,15 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
-	#$ScoreLabel.hide()	
-	$Countdown.show()		
+	#$ScoreLabel.hide()
+	$Countdown.show()
+	$Pastis.hide()
 	show_message("The show will begin in")
 
 	await $MessageTimer.timeout
 	$Message.hide()
 	$Countdown.hide()
-	$ScoreLabel.show()		
+	$ScoreLabel.show()
 	start_game.emit()
 
 func _process(delta):
