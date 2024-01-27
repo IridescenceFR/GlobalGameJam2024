@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5ytysd3r4yf4"]
+
+[ext_resource type="Script" path="res://Spectateur/Scripts/testSpectator.gd" id="1_i7npb"]
+[ext_resource type="PackedScene" uid="uid://cnggq8r54lmmq" path="res://Spectateur/Spectator.tscn" id="2_gm18b"]
+[ext_resource type="Texture2D" uid="uid://cg4uyo7kv8xju" path="res://Spectateur/Sprites/Scene.png" id="3_pgwfg"]
+
+[node name="TestSpectator" type="Node2D"]
+script = ExtResource("1_i7npb")
+
+[node name="Spectator" parent="." instance=ExtResource("2_gm18b")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(200, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(971, 532)
+texture = ExtResource("3_pgwfg")
+
+[connection signal="show_aura" from="." to="Spectator" method="_on_test_spectateur_show_aura"]
+[connection signal="suppress_aura" from="." to="Spectator" method="_on_test_spectateur_suppress_aura"]
