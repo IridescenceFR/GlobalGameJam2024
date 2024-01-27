@@ -25,10 +25,32 @@ func spawn_bubble():
 		bubble.color = color
 		bubble.position = Vector2(410 + pos_x, 200)
 		bubble.connect_to_parent(self)
+		bubble.add_to_group("bubbles")
 		add_child(bubble)
 		pos_x += 400
+	$OutOfTimeTimer.start()
 
 @warning_ignore("unused_parameter")
-func _on_bubble_player_joke(color, time_left):
+func _on_bubble_player_joke(color):
+	# CALCULE DU SCORE
 	print(color)
+	
+	$OutOfTimeTimer.set_paused(true)
+	var time_left = $OutOfTimeTimer.get_time_left()
+	$OutOfTimeTimer.stop()
+	
+	# START NEW ROUND
+	$NewJokeTimer.start()
 
+func _on_start_new_round():
+	# SUPPRESSION DES ANCIENNES RÉPONSES 
+	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
+	for b in array_of_nodes:
+		b.queue_free()
+	# CACHE LE SCORE 
+	
+	$BreatheBetweenJokesTimer.start()
+
+func _on_breathe_between_jokes_timer_timeout():
+	# RESTART DES BULLES
+	spawn_bubble()

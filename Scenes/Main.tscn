@@ -27,6 +27,19 @@ one_shot = true
 
 [node name="HUD" parent="." instance=ExtResource("2_cllfx")]
 
+[node name="NewJokeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="OutOfTimeTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BreatheBetweenJokesTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="NewJokeTimer" to="." method="_on_start_new_round"]
+[connection signal="timeout" from="OutOfTimeTimer" to="." method="_on_start_new_round"]
+[connection signal="timeout" from="BreatheBetweenJokesTimer" to="." method="_on_breathe_between_jokes_timer_timeout"]
