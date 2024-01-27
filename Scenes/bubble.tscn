@@ -36,10 +36,4 @@ icon_alignment = 1
 text_direction = 1
 script = ExtResource("1_w28qf")
 
-[node name="hideJoke" type="Timer" parent="."]
-wait_time = 100.0
-one_shot = true
-autostart = true
-
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="timeout" from="hideJoke" to="." method="_on_hide_joke_timeout"]

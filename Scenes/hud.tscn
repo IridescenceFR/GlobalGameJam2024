@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=15 format=3 uid="uid://d0jwdmh86gug2"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
