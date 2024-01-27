@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0jwdmh86gug2"]
+[gd_scene load_steps=15 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
@@ -74,6 +74,1543 @@ shadow_size = 10
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0156j")
+
+[node name="Credits" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = 258.0
+offset_right = 1916.0
+offset_bottom = 1080.0
+theme_override_fonts/normal_font = ExtResource("4_0tusq")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = " 													Jeu crée par:
+		Game Design and Story                     Art and Character Design
+		  · Thibault Blanché                                     · Edwige Boivin
+		  · Bastien Warin
+
+        Programming                                      Sound Design and Music
+		  · Eric Gadbin                                               · Charles Ulldemolins
+		  · Tom Guillen
+		  · Emma Rouzaud
+          · Thomas Warin
+
+
+
+
+
+
+
+
+
+
+Bravo, vous avez scroll jusque ici ! maintenant voici le script ENTIER de shrek 2 ! bonne lecture :)
+
+Il était une fois,
+un royaume fort, fort lointain,
+où le roi et la reine mirent au monde
+une superbe petite fille.
+Dans tout le pays,
+l'allégresse fut grande...
+jusqu'au coucher du soleil.
+Lors, ils s'aperçurent que leur fille
+était frappée d'une malédiction
+qui l'affectait nuit après nuit.
+Au désespoir,
+ils requirent l'aide d'une bonne fée
+qui leur conseilla d'enfermer
+la jeune princesse dans un donjon
+où elle attendrait le baiser
+du beau prince Charmant.
+Il entreprendrait
+ce périlleux voyage,
+traversant glaciers
+et déserts cuisants
+pendant maints jours et maintes nuits,
+risquant sa vie à chaque tournant,
+pour atteindre le fief du Dragon.
+Car il était le plus brave,
+le plus beau...
+de tout le pays.
+Et il était prédit que son baiser
+briserait l'horrible sortilège.
+Lui seul grimperait jusqu'à la plus haute
+chambre de la plus haute tour
+pour pénétrer chez la princesse,
+s'approcher de sa silhouette endormie
+et tirer les voilages
+pour découvrir...
+Quoi ?
+Princesse... Fiona ?
+Dieu merci ! Où est-elle ?
+- En lune de miel.
+- Lune de miel ? Avec qui ?
+- En lune de miel.
+- Lune de miel ? Avec qui ?
+COTTAGE DE HANSEL
+JE T'AIME
+C'est si bon d'être chez soi !
+ATTENTION AUX OGRES
+ATTENTION AUX OGRES
+Rien que toi, moi et...
+- Two, ça peut être pire que one...
+- L'Ane ?
+Shrek ! Fiona !
+Trop content de vous voir !
+Dans mes bras,
+vert bourreau des cœurs !
+Visez-moi Mme Shrek !
+Un bisou pour le destrier ?
+L'Ane ! Que fais-tu là ?
+Je m'occupais de votre nid d'amour.
+Tu veux dire, genre... trier le courrier
+et arroser les plantes.
+- Et nourrir les poissons !
+- J'en ai pas !
+Maintenant si.
+Ça, c'est Shrek et l'autre, Fiona.
+Ce Shrek est un petit canaillou...
+T'as vu l'heure...
+tu dois pas y aller ?
+Vous me montrez pas les photos ?
+Si on jouait aux dames ?
+Dis-moi, tu ne devrais pas
+aller retrouver Dragonne ?
+Ah oui, ça...
+Chais pas.
+Elle est lunatique, en ce moment.
+Alors, je tape l'incruste !
+On est toujours contents de te voir.
+Mais Fiona et moi,
+on est mariés maintenant.
+On a besoin de temps
+pour être ensemble.
+Rien qu'à deux.
+Tout seuls.
+Pigé ! Vous inquiétez pas !
+Je serai là pour empêcher
+qu'on vous dérange.
+- L'Ane !
+- Oui, coloc' ?
+Tu me déranges.
+D'ac. Ça baigne. Cool.
+Pinocchio et moi, on devait
+mater un tournoi, de toute façon...
+à dimanche,
+on se fera un barbecue...
+Ça lui passera. Alors...
+où en étions-nous ?
+Je crois que je me souviens.
+L'Ane !
+Je sais ! Tout seeeuuuls !
+Je me trotte.
+Je dis quoi, aux autres gus ?
+Suffit, Reggie.
+\"Très chère princesse Fiona,
+\"Vous êtes convoquée
+au Royaume de Fort Fort Lointain
+\"pour un Bal Royal
+en l'honneur de votre mariage,
+\"à l'occasion duquel le roi
+\"vous octroiera
+sa bénédiction royale à vous-même
+\"et à votre...
+\"prince Charmant.
+\"Bisous, le roi et la reine
+de Fort Fort Lointain,
+\"alias maman et papa.\"
+Maman et papa ?
+- Prince Charmant ?
+- Bal Royal ? J'peux venir ?
+- On n'y va pas.
+- Quoi ?
+Tu crois pas qu'ils seraient un peu...
+choqués de te voir comme ça ?
+Ils seront peut-être un peu étonnés.
+Mais ce sont mes parents, Shrek.
+Ils m'aiment.
+Ne t'en fais pas,
+ils t'aimeront aussi.
+Quelque chose me dit
+que je ferai tache au Licorne's Club.
+Arrête, ils ne sont pas comme ça.
+Alors, pourquoi
+le Grand Orchestre du Candide ?
+Arrête ! Tu pourrais au moins
+leur donner une chance.
+Pour aiguiser leurs fourches ?
+Non ! Ils veulent te donner
+leur bénédiction.
+Super !
+J'ai besoin de leur bénédiction ?
+Pour faire partie de la famille, oui !
+Qui a dit que je voulais
+en faire partie ?
+Toi, quand tu m'as épousée !
+J'aurais dû lire les petits caractères !
+Alors, tu ne veux pas venir ?
+Je t'assure, c'est une mauvaise idée.
+On n'y va pas, point final !
+Vite ! Faut éviter les bouchons !
+Vous inquiétez pas,
+on s'occupe de tout !
+Attendez-moi !
+C'est parti !
+Hue dia !
+Au pas, au trot, au galop !
+Rawhide !
+...au trot, au galop !
+Rawhide !
+A fond de train, train d'enfer,
+fer à cheval, cheval de course !
+Rawhide !
+FORT FORT LOINTAIN
+1100 KM
+On est arrivés ?
+- On est arrivés ?
+- Pas encore.
+On est arrivés ?
+On est arrivés ?
+On est arrivés ?
+C'est vrai ?
+On est arrivés ?
+- On est arrivés ?
+- Pas encore !
+On est arrivés ?
+On est arrivés ?
+C'est pas drôle !
+T'es pire qu'un gamin !
+Voilà pourquoi
+on hait les ogres !
+Tant pis pour vous !
+J'arrête de parler, na !
+Enfin !
+Mais ça traîne
+et ils passent même pas de film !
+Le Royaume de Fort Fort Lointain,
+l'Ane.
+C'est là qu'on va.
+Fort fort...
+Ioin !
+J'ai pigé.
+Mais je m'ennuie comme un rat mort !
+Trouve un moyen de te distraire.
+Cinq minutes...
+Essaie de ne pas être toi...
+pendant 5 minutes !
+On est arrivés ?
+Enfin !
+JEUNES MARIES
+BIENVENUE A FORT FORT LOINTAIN
+On va se la jouer vœux
+au champagne et rêves-caviar !
+Salut, beauté !
+On repasse te prendre !
+Les beaux bas !
+POUR TOUS VOS HAPPY ENDS
+MARRAINE, LA BONNE FEE
+C'est clair,
+on n'est plus dans le marais.
+Belle journée, pour une rencontre !
+Sexy, le béret !
+RAPUNZEL
+CENDRILLON
+Flots de piscines !
+Stars à gogo !
+FORT FORT LOINTAIN
+Acclamez le retour tant attendu
+de la ravissante princesse Fiona
+et de son jeune époux.
+Nous y sommes.
+- Nous y sommes !
+- Nous y sommes...
+Nous y sommes.
+Passez devant, je gare la caisse.
+Alors ? Tu crois toujours
+que c'était une bonne idée ?
+Bien sûr. Maman et papa ont l'air ravis
+de nous voir.
+- Qui diable sont-ils ?
+- Je crois que c'est notre petite fille.
+Ça n'est pas petit,
+c'est un énorme problème.
+Embrasser le prince
+devait briser le sort !
+Ce n'est pas le prince Charmant,
+mais elle a l'air...
+Heureuse ?
+On est venus, on les a vus.
+Filons avant qu'ils allument
+les torches.
+- Ce sont mes parents !
+- Ils t'ont enfermée dans une tour !
+C'était pour mon...
+Bien ! On rentre et on joue
+les abonnés absents.
+Harold, il faut faire...
+Vite !
+Ils regardent pas, filons !
+Shrek ! Arrête, tout va être...
+Désastreux !
+Je ne sais comment...
+- Tu y arriveras.
+- J'ai vraiment...
+Vraiment... pas...
+envie... de... rester
+ici !
+Maman...
+Papa...
+Je vous présente mon époux...
+Shrek.
+On voit tout de suite
+de qui Fiona tient son joli minois.
+Pardon.
+Mieux vaut rot sorti que rentré,
+hein Fiona ?
+Elle est bonne...
+Pas tant que ça.
+\"Pas sur la liste\" ?
+Vous savez pas qui je suis ?
+\"Pas sur la liste\" ?
+Vous savez pas qui je suis ?
+Ça gaze ?
+Merci de m'avoir attendu.
+- J'ai eu du mal à trouver.
+- Non ! Méchant âne ! Couché !
+Papa, tout va bien.
+Il est avec nous.
+- Il a aidé à me délivrer.
+- C'est moi: le noble destrier.
+Garçon !
+Le destrier a pas de bol !
+Ras le bol...
+Désolé.
+Super soupe, Mme Reine.
+Chéri.
+Alors, Fiona... dis-nous où tu vis.
+Shrek a ses propres terres.
+N'est-ce pas, chéri ?
+Elles sont situées
+dans une forêt enchantée...
+qui regorge d'écureuils,
+de mignons petits canards et...
+- Tu parles pas de ton marécage ?
+- L'Ane !
+L'ogre d'un marécage,
+comme c'est original !
+L'endroit rêvé
+pour élever les enfants.
+Un peu tôt pour penser à ça, non ?
+Certes !
+Je suis en train de manger.
+Vous insinuez quoi ?
+Papa ! Y a pas de problème.
+- Pour quelqu'un de son espèce.
+- Mon espèce ?
+J'ai une urgence...
+- Le dîner est servi !
+- Je peux me retenir !
+Du mexicain ! J'adore !
+Ventre affamé point ne sied.
+Attaquez !
+Pas de souci, Lilli.
+Donc, j'imagine
+que mes petits-enfants seront...
+Des ogres ! Oui !
+Il n'y a nul mal à cela.
+N'est-ce pas, Harold ?
+Bien sûr que non !
+En supposant
+que vous ne croquiez pas vos petits.
+Non. Nous préférons ceux
+qui ont mariné dans une tour.
+- S'il te plaît !
+- J'ai fait ça parce que je l'aime.
+C'est ça, un dragon comme nounou !
+Vous ne comprendriez pas,
+vous n'êtes pas son père.
+C'est si doux de dîner en famille.
+- Harold !
+- Shrek !
+Fiona !
+- Maman !
+- Harold !
+L'Ane !
+Tes larmes tombées
+M'ont invoquée
+Mon doux remède vais te donner
+Je sais ce qu'à princesse il faut
+Pour vivre heureuse et peu s'en faut
+Seigneur !
+Tu as changé... Tu es...
+une grande fille !
+- Qui êtes-vous ?
+- Mon poussin !
+Je suis la Bonne Fée, ta marraine.
+J'ai une bonne fée ?
+Ne t'en fais pas.
+Je vais tout arranger.
+D'un... tout... petit...
+Coup de baguette magique
+Tout deviendra idyllique
+Un tour de passe-passe
+Et v'là un prince plein aux as
+Robe brodée par des souris
+Pantoufles de verre de Paris
+Finis les soucis, vive la vie !
+Tu peux te confier à ton mobilier
+Avec nous, tu lanceras
+Une mode extra
+- Avec du strass, tu seras classe
+- La fille qu'un prince embrasse
+On écrira ton nom dans les oua-ouas
+\"36-15 Fiona\" !
+Carrosse \"sport\", roule en style
+Chauffeur sexy, prénom \"Kyle\"
+Finis points noirs et caries
+La cellulite, au pilori !
+Prime de la fée
+Un bichon frisé !
+Une retouche ici et là
+Un jour, ton prince viendra !
+Gloss, fard à paupières
+A toi le sexy derrière
+Il est canon, baraqué
+Allez vite batifoler
+Joli flirt sur la lune
+Avec ton prince, en nocturne
+T'es pas un thon, t'es trognon
+T'as un prince en béton
+Du soufflé au dîner
+Poulet en fricassée
+Une retouche ici et là
+Un jour, ton prince viendra...
+Merci beaucoup, Bonne Fée,
+mais...
+je n'ai pas besoin de tout ça.
+Tant pis pour toi !
+T'as eu un chiot ?
+J'ai que du shampooing, moi !
+Marraine la Fée, gentil mobilier...
+je vous présente mon époux, Shrek.
+Ton époux ?
+Depuis quand ?
+C'est Shrek qui m'a sauvée.
+- Ce n'est pas possible !
+- Super ! On se tape la tata.
+Elle veut nous aider.
+Elle peut nous aider à remballer.
+Mets ton manteau, on part.
+- Quoi ?
+- Je veux pas partir.
+Tu as décidé ça quand ?
+- Juste après notre arrivée.
+- Je suis navrée...
+Ce n'est rien.
+Je dois filer, moi aussi.
+Mais sache-le,
+si tu as besoin de moi:
+le bonheur,
+c'est simple comme une larme.
+Merci, on a du bonheur à revendre.
+Heureux, heureux, heureux...
+Je vois ça.
+En route, Kyle.
+Bravo, Shrek.
+Je t'avais dit
+que c'était une mauvaise idée.
+Tu aurais pu faire des efforts
+avec mon père.
+Je crois que j'aurais pas eu
+sa bénédiction, même si j'en voulais.
+Ça serait bien si on me demandait
+ce que je veux, non ?
+Oui. Tu veux
+que je fasse ta valise ?
+Tu n'es pas croyable !
+Tu te comportes comme un...
+- Vas-y ! Dis-le !
+- Comme un ogre !
+Je te file un scoop:
+que ça plaise ou non à tes parents,
+je suis un ogre !
+Et tu sais quoi, princesse ?
+C'est pas prêt de changer !
+J'ai changé pour toi, Shrek.
+Pense un peu à ça.
+Là, t'as fait fort.
+\"Je suis un ogre !\"
+- Je m'y attendais.
+- Certes, vous avez tout fait pour.
+Morbleu, vous exagérez, Lillian !
+C'est lui, l'ogre. Pas moi.
+Vous prenez les choses trop à cœur.
+C'est Fiona que cela regarde.
+Mais elle devait choisir
+le prince élu pour elle.
+Vous voulez que je donne
+ma bénédiction à ce... cette chose ?
+Fiona le veut.
+Elle ne vous pardonnerait pas.
+Je ne veux pas perdre notre fille
+à nouveau.
+Vous agissez comme si l'amour
+était prévisible.
+Avez-vous oublié,
+lorsque nous étions jeunes...
+près de la mare aux nénuphars...
+- en fleur...
+- Notre premier baiser...
+Ce n'est pas pareil !
+Vous ne réalisez pas
+que notre fille a épousé un monstre !
+Ne nous faites pas
+un *** nerveux.
+Faites comme si tout allait bien !
+Tralala, tout est merveilleux !
+Que pourrait-il arriver de pire ?
+- Bonsoir, Harold.
+- Qu'y a-t-il ?
+Rien ! Ma blessure de guerre
+se rappelle à mon bon souvenir.
+- Je vais la dégourdir un peu.
+- Monte !
+Il faut qu'on parle.
+En fait, Bonne Fée,
+j'allais me coucher.
+J'ai pris mes cachets,
+je dors debout.
+Ça ne vous dérange point
+d'écourter cette visite ?
+Bonsoir.
+Alors, quoi de neuf ?
+Tu te souviens de mon fils...
+le prince Charmant ?
+C'est toi ? Nom d'un tê***,
+comme le temps passe...
+quand es-tu rentré ?
+Cela fait environ 5 minutes.
+Après avoir enduré blizzards glacés
+et déserts cuisants,
+je monte au plus haut donjon...
+Maman s'occupe de tout.
+Il endure blizzards glacés
+et déserts cuisants,
+il monte dans la foutue chambre
+du foutu donjon...
+Et que trouve-t-il ?
+Un loup travelo
+qui lui annonce que sa princesse...
+est déjà mariée !
+Pas ma faute s'il était en retard.
+Arrêtez le carrosse !
+Tu me forces à perpétrer un acte
+dont je n'ai nulle envie.
+Où sommes-nous ?
+Bienvenue à \"Bayard Burger\".
+Vous désirez ?
+Mon régime est fichu !
+Tu peux être fier de toi.
+Deux Suprêmes \"Renaissance\",
+des oignons...
+- Un Menu médiéval.
+- Un Menu médiéval et, Harold...
+- Frites féodales ?
+- Non, merci.
+Un Taco Lancelot ?
+Rien, merci.
+Votre commande, Bonne Fée.
+En prime, avec le Menu médiéval.
+Tiens, mon lapin.
+On avait un deal. Tu ne veux pas
+que j'abroge mes mesures ?
+Certes non.
+Donc, Fiona et Charmant
+seront unis.
+Crois-moi, c'est pour le mieux.
+Pas seulement pour ta fille...
+mais pour ton royaume.
+Et comment dois-je m'y prendre ?
+Sers-toi de ton imagination.
+A LA POMME EMPOISONNÉE
+Entrez, Sire.
+S'il vous plaît...
+On se connaît pas ?
+Vous devez me prendre
+pour un autre.
+Pardon,
+je cherche l'affreuse belle-sœur.
+Vous voilà !
+J'ai besoin qu'on fasse
+son affaire à quelqu'un.
+- Qui est le gus ?
+- Ce n'est pas un \"gus\", en soi...
+C'est un ogre.
+Mon pote, un petit tuyau:
+y a qu'un gars pour un job pareil
+et, franchement,
+il aime pas être dérangé.
+il aime pas être dérangé.
+Où puis-je le trouver ?
+Qui ose pénétrer chez moi ?
+Désolé de vous déranger, on m'a dit
+de m'adresser à vous pour un...
+problème d'ogre.
+On vous a dit vrai.
+Mais pour une telle besogne,
+je prends très cher.
+Ceci suffira-t-il ?
+Vous venez de vous octroyer
+mes précieux services, Sire.
+Dites-moi juste
+où je puis trouver cet ogre ?
+SIRE JUSTIN
+Preux chevalier, acceptez cette faveur
+en gage de ma reconnaissance.
+JOURNAL INTIME
+\"Cherjournal,
+\"la Belle au bois dormant
+fait une soirée pyjama,
+\"mais papa m'interdit de sortir
+après le coucher du soleil.
+\"Papa m'envoie ailleurs
+quelque temps.
+\"Sûrement dans une école
+pour damoiselles.
+\"Maman dit qu'à l'âge voulu,
+\"mon beau prince Charmant me délivrera,
+me ramènera dans ma famille,
+\"et que nous vivrons heureux
+pour toujours.\"
+Mme Fiona Charmant.
+Je ne tombe pas
+à un moment délicat ?
+Non, j'étais juste en train de lire...
+un livre d'horreur.
+Je désirais vous présenter mes excuses
+pour ma conduite inqualifiable.
+J'ignore ce qui m'a pris.
+Pourrions-nous passer outre
+et repartir à zéro ?
+- Ecoutez, Sire...
+- Appelez-moi papa.
+On s'est tous deux comportés
+comme des ogres.
+On a besoin d'un peu de temps
+pour se connaître.
+Excellente idée !
+Viendriez-vous à une chasse matinale,
+un moment \"père-fils\" privilégié ?
+Je sais combien
+cela ferait plaisir à Fiona.
+Si nous disions...
+7h30 près du vieux chêne ?
+Fais pas l'âne, on est perdus !
+Impossible. On a suivi les instructions
+du roi à la lettre.
+\"Gagnez l'endroit
+le plus noir des bois.
+- \"Passez les arbres sinistres...\"
+- Vu !
+- V'là le buisson \"Shirley Bassey\".
+- On est passés devant 3 fois !
+T'as pas voulu demander la route !
+Génial ! Ma chance de me raccommoder
+avec le père de Fiona
+et je me perds dans les bois
+avec toi !
+Prends pas le mors,
+je veux t'aider.
+Je sais !
+- Je suis désolé.
+- T'en fais pas pour ça.
+Faut vraiment
+que je me rabiboche avec lui.
+Mais oui,
+allons fusionner avec papa.
+Ben alors, l'Ane...
+on s'est attendris un poil,
+mais ronronner ?
+Je ronronne pas !
+Tu parles.
+Après ça sera quoi ? Un câlin ?
+Les ânes, ça ronronne pas.
+Pour qui tu me prends ?
+Craignez-moi si vous osez !
+Un petit chat !
+- Gaffe ! Il a un cure-dents !
+- C'est un chat, l'Ane.
+Viens, minou !
+Viens là, petit minou.
+Décroche-le !
+- J'ai raté ?
+- Dans le mille !
+Fi, l'ogre...
+demande grâce au...
+Chat... Potté !
+Je vais tuer ce chat !
+- Boule de poils.
+- Ça craint !
+On en fait quoi ?
+On le châtre avec son coupe-chou.
+Ça lui fera les pattes !
+Je vous en conjure ! Rien de personnel,
+je voulais aider ma famille.
+Ma mama, elle est malade,
+mon père fait les poubelles.
+Le roi m'a offert beaucoup d'or,
+j'ai mes frères à charge...
+Le père de Fiona t'a payé
+pour faire ça ?
+Le roi friqué ? Si.
+Géniale, la bénédiction de papa !
+Sois zen !
+Presque tout le monde veut te tuer.
+Merci bien.
+Ça serait peut-être mieux pour Fiona
+si j'étais un genre de prince charmant.
+Si ! Le roi a dit ça.
+Pardon,
+je croyais que vous me parliez.
+Fiona sait que tu ferais tout
+pour elle.
+C'est sûr,
+je changerais si je pouvais.
+J'aimerais juste
+la rendre heureuse.
+Quel âne je fais !
+\"Le bonheur...
+\"simple comme une larme.\"
+L'Ane ! Pense à ce qui t'est arrivé
+de plus triste.
+Par où je commence ?
+D'abord, on veut me céder contre des
+haricots magiques. Le traumatisme !
+A une teuf, ils jouent à m'épingler
+une queue aux fesses !
+Bourrés, ils me frappent avec
+un bâton en criant: \"Piñata !\"
+C'est quoi, d'abord ?
+Non, l'Ane !
+Il faut que tu pleures !
+Projette pas tes émotions sur moi.
+Si t'es tristoune, à toi de...
+Sac à puces mité,
+bouffeur de...
+Y a du son ?
+Ici la Bonne Fée.
+Je suis absente ou avec un client.
+Passez nous voir,
+nous serons ravis de vous recevoir.
+Cordial \"Happy end\" !
+Partant pour une quête, l'Ane ?
+Shrek et l'Ane
+dans une autre aventure ébouriffante !
+\"Rien n'pourra nous arrêter...\"
+- Arrêtez ! Ogre... je t'ai méjugé.
+- Bienvenue au club !
+Sur mon honneur, je t'escorterai
+jusqu'à ce que je te sauve la vie
+comme tu as épargné la mienne.
+Désolé, le poste d'animal parlant
+horripilant est pris.
+En route, Shrek !
+Allez, l'Ane. Regarde-le...
+avec ses petites bobottes.
+Il te botte pas, ce minou botté ?
+- On l'adopte...
+- Je rêve !
+Ecoute, il ronronne !
+- Maintenant, tu le trouves chou ?
+- Sois zen, l'Ane.
+C'est moi qui dois être zen ?
+L'expert en zénitude a parlé !
+C'est moi qui dois être zen ?
+L'expert en zénitude a parlé !
+Toutes deux sont fort gaies.
+Qu'en pensez-vous, Harold ?
+Oui, oui, parfait.
+Feignez au moins de vous intéresser
+au bal de votre fille.
+Cela n'a point grande importance.
+Qui sait même s'il y aura un bal !
+- Bonjour, ma chérie.
+- Tu disais, Cedric ? J'arrive !
+Tu as vu Shrek ?
+Non. Demande à ton père.
+N'utilise pas de mots trop compliqués,
+il est un peu lent, ce matin.
+Puis-je être utile
+à sa Majesté ?
+Exquis. Quel est ce plat ?
+Le petit-déjeuner des chiens, Sire.
+Excellent.
+Continue, Cedric.
+- Tu as vu Shrek ?
+- Non, ma chérie.
+Il a dû dénicher une jolie mare
+boueuse pour se rafraîchir.
+Après votre prise de bec, hier soir.
+Tu nous as entendus ?
+Tout le royaume
+vous a entendus.
+Après tout,
+il est dans sa nature d'être...
+un peu brute.
+Lui ? Tu n'as pas été non plus
+d'une amabilité folle !
+A quoi t'attendais-tu ?
+Regarde ce qu'il t'a fait.
+Shrek m'aime telle que je suis.
+Je t'aurais cru heureux pour moi.
+Ma chérie,
+je pense uniquement à ton bonheur.
+Peut-être devrais-tu faire de même.
+Sans blague ?
+La centrale Inc. Ognito !
+Tournons les sabots !
+C'est le cottage de la Bonne Fée.
+Elle fabrique la plupart
+des sorts et potions du royaume.
+On passe lui faire un sort ?
+Un sort !
+Il est hilarant !
+Je voudrais voir...
+...la Bonne Fée.
+Désolée, elle n'est pas là.
+Jerome ! Café
+et double croque-madame. Illico !
+Oui, Bonne Fée. Presto.
+Elle ne reçoit pas de clients
+aujourd'hui.
+T'inquiète, on est du syndicat.
+Du syndicat ?
+Pour les travailleurs des industries
+de la magie noire ou blanche.
+Diantre !
+Tu te sens dévalorisé, opprimé ?
+Un peu.
+On n'a même pas de mutuelle.
+Même pas de mutuelle !
+On va jeter un œil.
+A propos,
+inutile de prévenir la Bonne Fée.
+Tu me suis ?
+- Arrête.
+- Motus. Allez-y.
+Une goutte de désir.
+Coquin !
+Une pincée de passion.
+Et un zeste de...
+luxure !
+Excusez l'interlude, mais...
+Nom d'un p'*** frère Grimm, toi ici ?
+Il semblerait que Fiona
+soit pas vraiment heureuse.
+Ça t'interroge quelque part ?
+Etudions la question, veux-tu ?
+Princesses: \"Cendrillon\".
+\"Ils vécurent heureux
+pour toujours\".
+Pas d'ogres !
+\"Blanche-Neige\".
+\"Un beau prince...\"
+Pas d'ogres.
+\"La Belle au bois dormant\".
+Pas d'ogres !
+\"Hänsel et Gretel\" ? Non.
+\"Poucette\" ? Non.
+\"L'Oiseau d'or\", \"La Petite sirène\",
+\"Pretty Woman\"...
+Tu vois...
+pas de happy end pour les ogres.
+Ecoutez, m'dame...
+Ne pointe pas ces sales saucisses
+verdâtres vers moi !
+Double croque-madame
+et café.
+Pardon.
+Pas de problème, on partait.
+Désolé de vous avoir dérangée,
+Miss Fée.
+Hors... de ma vue !
+Venez, les gars.
+Vivement le week-end, hein ?
+La tâche est dure,
+t'es dur à la tâche ?
+SALLE DES POTIONS
+Vire tes bottes en cuir et tes fesses
+de minet de ma tronche ! Ça pue !
+Tu sens pas vraiment la rose.
+- Y en a bien une qui fera l'affaire.
+- Je concoctais ce même plan.
+Nos esprits fusionnent déjà.
+Si on a besoin d'un expert
+ès lèche-bottes, on t'appellera.
+Ça craint, ce plan.
+Rends-toi utile, fais le guet.
+Potté, tu pourrais attraper
+celles du haut ?
+No problema, patron.
+Dans une de mes 9 vies, j'étais
+le félin-cambrioleur de Compostela !
+T'es à la masse ?
+L'Ane... ouvre l'œil.
+Ouvrir l'œil ? Je mate un max !
+Je vais mater la sorcière te balancer
+un méchant sort aux fesses.
+Et je rigolerai dans ma barbe...
+- Tu trouves quoi ?
+- \"Bain de Siège Social\"...
+Super ! Les fesses douces,
+idéal pour raccommoder les couples !
+\"Djinn Toxique\" ?
+- \"Affreux-disiaque\" ?
+- Cherche à \"Beau\".
+Désolé, y a pas ça.
+Si je prenais
+la \"Potion Happy End\" ?
+Ça a quel effet ?
+C'est écrit \"Divine Beauté\"...
+Y a des cultures où on vénère
+les ânes comme des sages,
+surtout les ânes parlants.
+Prends, y a du monde !
+On peut activer ?
+Vite !
+Bien joué !
+Enfin un bon usage pour ta bouche !
+Dépêchez !
+Peu importe le responsable,
+nettoyez-moi tout ça !
+Et qu'on m'apporte un beignet
+bien gras nappé de chocolat !
+- Mère !
+- Charmant, mon chéri...
+C'est pas le moment, mon crapaud.
+Maman travaille.
+Qu'est-ce qui s'est passé ?
+L'ogre est passé !
+Quoi ? Où est-il, maman ?
+Je passerai sa tête
+au fil de l'épée !
+Je le pourfendrai sur place !
+Il regrettera le jour
+où il m'a dérobé mon royaume !
+Range ça, Junior !
+Tu seras roi quand même.
+Il faut juste trouver
+un plan plus retors.
+On a vérifié, tout est là...
+sauf une potion.
+Quoi ?
+Je crois que cela peut jouer
+en notre faveur.
+\"Potion 'Happy End'.
+\"Efficacité maximum.
+\"Pour vous et votre fidèle amour.
+\"Si l'un me boit, les deux seront gâtés:
+Bonheur, aisance et divine beauté.\"
+- \"Les deux seront gâtés\" ?
+- Ça affectera Fiona aussi.
+Je le sens pas.
+Mon 6e sens d'âne sonne l'alarme.
+Balance cette fiole affiolante
+et filons.
+\"Divine beauté\",
+ça peut pas faire de mal.
+T'es allergique,
+tu vires au vert !
+Si tu crois que je vais te frictionner
+avec du Baume du Baudet, tu rêves !
+Patron, au cas où y aurait un os
+avec la potion,
+permets-moi de la goûter.
+Ce serait un honneur
+de risquer mon pelage pour toi.
+Arrête ton char, Potté !
+L'expérimentation ânimale, j'assure !
+C'est au meilleur ami de faire ça.
+File la fiole.
+Comment tu te sens ?
+Je sens pas de différence.
+J'ai l'air différent ?
+T'as toujours une tête de mule.
+Ça marche peut-être pas
+sur les ânes.
+A nous, Fiona !
+- Si tu bois, tu peux plus reculer.
+- Je sais.
+- Adieu, bains de boue !
+- Je sais.
+- Adieu, gratte-fesses !
+- Je sais.
+- Mais t'adores être un ogre !
+- Je sais !
+Mais j'aime Fiona plus encore.
+Attends !
+Ça craint du boudin,
+t'as bu la potion \"Happy Vent\" !
+C'est peut-être un placebo.
+Ou peut-être que Fiona
+n'est pas faite pour moi.
+Je l'avais dit,
+je renifle le cataclysme !
+Je veux pas mourir.
+Je veux pas mourir !
+Sainte Peau d'Ane, pitié !
+Je fonds !
+Je me dissous !
+C'est la pluie.
+Tu broies du noir
+car il fait nuit
+et que le père de Fiona a lancé
+un tueur miteux à tes trousses.
+Ça ira mieux demain.
+Tu verras.
+Le soleil brillera...
+demain !
+Tu le verras cul-miner...
+Le quoi du minet ?
+Capri, c'est fini !
+Ça va ?
+Patron, on le dépouille ?
+Te voilà !
+Tu nous as manqué, au dîner.
+Qu'y a-t-il, chérie ?
+J'ai réfléchi à ce que tu as dit.
+Je vais rectifier la situation.
+Excellent ! Bravo, ma fille.
+C'était une erreur d'amener Shrek ici.
+Je vais aller le chercher...
+et nous retournerons
+dans le marécage, chez nous.
+Fiona, s'il te plaît...
+Pas de précipitation,
+tu ne peux partir maintenant.
+Bonjour, beau lérot.
+Ton minou est trop chou.
+- Ma tête...
+- M'en suis allée puiser de l'eau.
+Un joli nez retroussé ?
+Des cheveux épais et bouclés ?
+Des fesses fermes et bien rondes ?
+Je suis...
+- Craquant !
+- Je craque.
+Moi, c'est Jill. Et toi ?
+Tu viens d'Europe ?
+- Tu es tendu.
+- Je le masse !
+- Prem's !
+- Je masse quoi ?
+Fais la queue.
+Fais la queue.
+Damoiselles,
+avez-vous vu mon âne ?
+Qui tu traites d'âne ?
+- L'Ane ? Tu es un...
+- Etalon, mon mignon !
+Je peux hennir !
+Je peux compter...
+Regarde-moi !
+Je trotte !
+Mortelle, la potion !
+Y a quoi, dedans ?
+\"Bois pas la potion, M. Patron,
+c'est dangereux.\"
+\"Effets secondaires: brûlures,
+démangeaisons, suintements.
+\"Contre-indiqué en cas
+de troubles cardiaques et nerveux.\"
+Je trotte, je trotte,
+je trotte à mort !
+Quoi ?
+\"Pour rendre les effets permanents,
+\"le buveur doit embrasser son fidèle amour
+avant minuit.\"
+Minuit ?
+Pourquoi toujours minuit ?
+- Je serai ton fidèle amour !
+- Non, moi !
+Je serai fidèle...
+plus ou moins.
+Damoiselles,
+j'ai déjà un fidèle amour.
+Et foi de Potté,
+ça va dépoter avec la princesse !
+C'est clair,
+t'es plus canon à regarder.
+Mais au fond,
+t'es toujours dégueu,
+teigneux, puant, cracra...
+le même ogre grognon.
+Et toi, le même âne horripilant.
+Attention princesse,
+le moi nouveau est arrivé !
+D'abord, faut virer ces fringues.
+- Prêt ?
+- Prêt !
+Cocher, arrête !
+Mon Dieu, aidez-moi !
+Fini, le tiercé !
+Je suis aveugle !
+Pourrais-je un jour rejouer du violon ?
+Pauvre créature !
+Puis-je quelque chose pour toi ?
+Peut-être une chose...
+Ote ta perruque
+et vire tes chausses !
+- Pas mal.
+- Pas mal du tout.
+Père ?
+Tout va-t-il bien ?
+Merci, messires.
+Un jour, je vous revaudrai ça.
+Sauf si je vous retrouve pas
+ou si j'oublie !
+Dites à la princesse Fiona
+que son époux, Sire Shrek, est là.
+Bonjour, beau mâle.
+- Princesse !
+- L'Ane ?
+La potion a marché
+sur toi aussi ?
+Quelle potion ?
+Shrek et moi,
+on a bu une potion magique
+et maintenant...
+on est sexy !
+Pour toi, poupée... quand tu veux.
+- Rêve pas !
+- Où est Shrek ?
+Il est allé te chercher.
+Tu danses, joli cœur ?
+Tu pars si vite ?
+Tu ne veux pas voir ta femme ?
+Certes, Fiona. C'est moi.
+Qu'est-il arrivé à ta voix ?
+La potion a changé moult choses,
+Fiona.
+Mais pas mes sentiments envers toi.
+Charmant...
+Vous trouvez ?
+Papa, j'espérais
+que vous apprécieriez.
+- Qui êtes-vous ?
+- Maman, c'est moi, Shrek.
+Je sais que c'est toujours
+la 1 re impression qui compte...
+mais... qu'en dites-vous ?
+Mince ! Ils ne peuvent pas
+nous entendre, mon lapin.
+Tu ne crois pas
+que tu lui as assez gâché la vie ?
+Je voulais juste
+qu'elle soit heureuse.
+A présent, elle le sera.
+Mon canard,
+elle a enfin trouvé le prince
+de ses rêves.
+Mais regardez-moi,
+regardez ce que j'ai fait pour elle.
+Cesse de vivre
+dans un conte de fées, Shrek.
+C'est une princesse
+et tu es un ogre.
+Aucune potion
+ne changera jamais cela.
+Mais...
+je l'aime.
+Si tu l'aimes vraiment...
+tu la laisseras partir.
+C'est quoi, le topo ?
+Où tu files ?
+Vous n'avez rien à voir avec cela,
+par hasard, Harold ?
+Tenez, les gars.
+Laisse la bouteille, Doris.
+Pourquoi ces têtes ?
+Y a maldonne depuis le début.
+J'aurais jamais dû
+la délivrer du donjon.
+Je hais les lundis.
+Tu vas pas lâcher la meilleure chose
+qui te soit arrivée ?
+J'ai pas le choix !
+Elle aime ce joli cœur
+de prince Charmant.
+Il est vraiment si beau que ça ?
+Tu veux rire ?
+Il est sublime !
+Un visage enchanteur,
+modelé par des anges.
+Ça fait rêver...
+Curieusement,
+ça me réconforte pas beaucoup.
+Ecoutez, les gars...
+c'est mieux comme ça.
+Maman et papa sont contents
+et Fiona a l'homme de ses rêves.
+Tout le monde y gagne.
+Sauf toi.
+Je pige pas, Shrek.
+Tu aimes Fiona !
+C'est pour ça
+que je la laisse partir.
+Excusez-moi.
+Elle est là ?
+Dans l'arrière-salle.
+Me revoilà !
+Bonne Fée, Charmant.
+J'espère que tu as une bonne raison
+de nous attirer dans ce bouge.
+Je crains que Fiona n'en pince pas
+vraiment pour Charmant.
+- Et d'abord, c'est pas ma faute.
+- Bien sûr que non, mon cœur.
+Comment être charmant
+en jouant le rôle d'un ogre répugnant !
+Personne n'est à blâmer.
+Il vaut peut-être mieux tout arrêter.
+On ne peut forcer quelqu'un
+à tomber amoureux.
+Désolée, je fais ça tout le temps !
+Donne ça à Fiona, elle aimera
+le premier homme qu'elle embrassera...
+et qui sera Charmant.
+Pardon ?
+Je ne puis. Je ne le ferai point.
+Mais si, tu le feras.
+Rappelle-toi, j'ai donné
+un coup de pouce à ton happy end.
+Je peux tout annuler
+d'un coup de baguette.
+Est-ce ça que tu veux ? Alors ?
+Il faut qu'on file.
+Je dois coiffer Charmant avant le bal.
+Il a un épi devant et oublie derrière.
+Faut toujours te brosser le derrière.
+Merci, mère.
+Mère ?
+De Dieu... Un cheval parlant !
+L'ogre !
+Arrêtez-les ! Au voleur !
+On exhibe les abdos à gogo
+et les croupes affriolantes, ce soir,
+au Bal Royal de Fort Fort Lointain !
+Les carrosses déversent
+la crème de la crème à flots.
+Tout le gratin est là pour acclamer
+la princesse Fiona et le prince Shrek.
+Juste ciel, quelles tenues divines !
+Voilà Hänsel et Gretel !
+Pourquoi ils sèment
+des miettes ?
+Derrière eux,
+Tom Pouce et Poucette.
+Ne sont-ils pas adorables ?
+Et voici
+la Belle au bois dormant !
+Flapie, la belle.
+Qui est-ce ? Qui voilà ?
+Qui est-ce donc ?
+C'est la seule, c'est l'unique,
+c'est Marraine, la Bonne Fée !
+Bonsoir, Fort Fort Lointain !
+Vous me faites un \"whoop whoop\" ?
+Je vous souhaite à tous
+de fabuleux \"happy ends\" et...
+vous connaissez la suite !
+On retrouve le Bal Royal
+tout de suite après la pub.
+Je dé*** ces trucs people.
+Trop rasoir.
+Zappe sur \"Roue de la Torture\".
+Je zappe nulle part
+avant d'avoir vu Shrek et Fiona.
+Va te faire raboter !
+Les souris, une grignoucherie !
+Non, à votre gauche ! A gauche !
+- Ce soir, \"Chevaliers\"...
+- Voilà une bonne émission !
+Mustang blanc vers la forêt.
+Envoyez des renforts !
+Que nos preux montrent
+à ces sauvageons
+qu'ils sont à cheval
+sur la conduite !
+Pourquoi vous me chopez ?
+Brutalité policière !
+Je dois parler à la princesse Fiona !
+S'en tireront-ils ?
+Ma langue au chat.
+Chiens de poulets capitalistes !
+- Herbe à chat !
+- Pas à moi...
+Trouvez la princesse Fiona !
+Je suis un âne !
+Dites-lui...
+Je suis son mari, Shrek !
+Vite ! Retour arrière !
+Je suis son mari, Shrek !
+Ma chérie ?
+Je pensais bien te trouver ici.
+Une bonne tasse de thé bien chaud
+avant le bal ?
+Je n'y vais pas.
+Tout le royaume est là
+pour célébrer ton mariage.
+Il y a un problème.
+Ce n'est pas mon époux.
+Regarde-le.
+Certes, il est un peu... différent.
+Mais les gens changent
+pour ceux qu'ils aiment.
+Si tu savais
+combien j'ai changé pour ta mère.
+Changé ?
+Il a complètement perdu l'esprit !
+Viens au bal,
+accorde-lui encore une chance.
+Peut-être aimeras-tu
+ce nouveau Shrek.
+Mais c'est l'ancien
+dont je suis tombée amoureuse.
+Je donnerais tout
+pour le retrouver.
+Ma chérie...
+C'est le mien. Sans théine.
+Sinon, c'est la nuit blanche.
+Je veux sortir ! Vous pouvez pas
+nous enfermer comme ça !
+Je veux sortir ! Vous pouvez pas
+nous enfermer comme ça !
+Et mes droits ?
+J'ai le droit de garder le silence !
+Personne me l'a dit !
+Tu as le droit
+de garder le silence.
+Ce que t'as pas,
+c'est la capacité.
+Je dois tenir ou, moi aussi,
+je sombrerai dans la folie.
+Shrek ?
+L'Ane ?
+Trop ***.
+Ti Biscuit ! Pinocchio !
+Faites-nous sortir d'ici !
+Tiens, voilà du boudin !
+Chauds, les macarons !
+Vite, dis un mensonge !
+- Quoi ?
+- N'importe, mais vite !
+Un truc idiot:
+\"Je porte des dessous sexy\".
+Je porte des dessous sexy.
+- C'est vrai ?
+- Absolument pas !
+On dirait que si !
+- Même pas vrai !
+- Quel genre ?
+- C'est un string !
+- Un caleçon !
+- Pas vrai !
+- Si !
+- Pas vrai !
+- Si !
+Accroche-toi, jeunot !
+Attends !
+- Pardon...
+- Quoi ? Potté !
+Pourriez-vous me lâcher ?
+- Excuse, patron.
+- Suffit, il faut empêcher ce baiser !
+Tu voulais pas renoncer à elle ?
+Si, mais je peux pas
+les laisser faire.
+J'aime mieux ça.
+Enfin, je te retrouve !
+Impossible ! Le château est gardé,
+y a des douves.
+Les amis, on est chocolat,
+on l'a dans le baba !
+- Quoi ?
+- Ton papa, il était pâtissier ?
+Bien sûr ! Il vit dans Drury Lane.
+Pourquoi ?
+Parce qu'on va avoir besoin de farine.
+De tonnes et de tonnes de farine.
+Fais chauffer le four, Papatissier !
+On a une grosse commande !
+BOULANGERIE
+Il est vivant !
+Cours, file, galope, cavale !
+Vas-y, petit !
+Taïaut, Cake Kong !
+Sus au château !
+Non, grande biscotte idiote !
+Cake Kong !
+Par ici, regarde le dada !
+C'est ça, suis le joli dada !
+Le joli dada veut jouer au château !
+Messires et gentes dames,
+la princesse Fiona
+et son jeune époux, le prince Shrek.
+Shrek, que fais-tu ?
+Je joue le jeu, Fiona.
+Tu as mis du gloss ?
+A la cerise. Tu veux goûter ?
+- Ça va pas ?
+- Mais, ma chouquette...
+Do mineur, en do mineur...
+Messires et gentes dames...
+Je voudrais dédier cette chanson
+à la princesse Fiona
+et au prince Shrek.
+Fiona, ma princesse...
+m'accorderas-tu cette danse ?
+Où sont passés tous les preux ?
+Et où sont tous les dieux ?
+Où est-il, mon Hercule fougueux
+Qui risquera de tels enjeux ?
+Depuis quand danses-tu ?
+Fiona chérie,
+s'il y a une chose que je sais,
+c'est que l'amour regorge
+de surprises.
+*** la nuit
+Le sommeil me fuit
+Et dans mes rêves, je n'vois que lui
+Je veux un héros !
+Vas-y, mon grand,
+on se tape l'incruste !
+Armez les catapultes !
+- Accrochez-vous !
+- Joli !
+Pas le bouton
+en boule de gomme !
+Chaud devant !
+Quelque part après minuit
+Dans mes plus folles songeries...
+Vas-y, Kong !
+Aux chaudrons !
+Galopant comme le tonnerre
+Bouillant de colère
+Après toi, Kong !
+C'est ça ! Tire !
+Bouillant, pas moussant !
+Là où les cimes touchent les cieux
+Où la foudre fend la mer en deux
+Je sais qu'il est là, mystérieux
+Et qu'il me veut !
+Tire !
+Sois sage...
+Laisse-moi !
+Potté !
+Va ! Ta dame a besoin de toi !
+Aujourd'hui,
+je rembourse ma dette.
+Il est prodigieux
+Il est fabuleux
+Et il combat tous les affreux !
+- Je veux un héros !
+- Arrêtez !
+Toi, là !
+Touche pas à ma femme !
+Tu pouvais pas retourner dans ton marais
+et nous lâcher les baskets ?
+- Feu !
+- Cochon qui s'en dédit !
+Pinocchio, la baguette !
+J'vois sa culotte !
+Je suis un vrai garçon !
+L'Ane !
+Je suis un vrai...
+Je l'ai !
+Demandez grâce à Potté...
+...et à l'Ane !
+Elle a bu la potion !
+Embrasse-la !
+Harold !
+Tu devais lui donner la potion !
+J'ai dû me tromper de tasse.
+Maman !
+Maman ?
+Je t'avais prévenu,
+les ogres, ça n'a pas droit
+au \"happy end\" !
+Papa !
+- Il est... ?
+- Oui.
+Il a fait couac.
+J'espérais vous éviter ça.
+- Dire qu'il te jetait la pierre !
+- L'Ane !
+Il a raison.
+Je vous demande pardon...
+à tous deux.
+Je voulais ce qu'il y a de mieux
+pour Fiona.
+Mais je vois...
+qu'elle l'a déjà.
+Shrek, Fiona...
+voulez-vous accepter les excuses
+d'un vieux crapaud
+et ma bénédiction ?
+Navré, Lillian. J'aurais aimé
+être l'homme que vous méritez.
+Vous l'êtes plus aujourd'hui
+que jamais, pustules ou pas.
+Patron ! La \"Potion Happy End\" !
+Minuit.
+Fiona... est-ce cela que tu veux ?
+Demeurer ainsi pour toujours ?
+Si tu m'embrasses maintenant...
+nous resterons ainsi.
+Tu ferais ça ?
+- Pour moi ?
+- Oui.
+Je veux
+ce que toute princesse désire...
+vivre heureuse pour toujours...
+avec l'ogre que j'ai épousé.
+Quoi qu'il arrive,
+je ne dois pas pleurer.
+Me faites pas pleurer !
+FELICITATIONS, LES JEUNES MARIES
+Tu restes un noble destrier,
+pour moi.
+Alors, où en étions-nous ?
+Je me souviens.
+On devait pas faire la fiesta ?
+Potté et l'Ane, live !
+A toi, Potté !
+C'est parti !
+Salut, beau mâle !
+L'Ane, c'est de l'espagnol !
+Chauffe, Marcel !
+l am tout seul
+l am tout seul
+J'ai plus envie
+To be tout seul...
+On va au Kit Kat Club,
+amène ta peau d'âne !
+Merci, compadre.
+J'ai pas la pêche.
+Ça te la redonnera !
+On te trouvera une jolie... bourrique.
+Pupuce !
+Ça, c'est ma biche !
+Pupuce, où t'étais ?
+Désolé. J'aurais dû rester
+mais Shrek avait une urgence...
+Quoi ? Répète-moi ça ?
+Qu'est-ce que tu racontes ?
+Sérieux ?
+Regardez nos jolis bébés mutants !
+Faut que je dégotte un boulot !
+Faut que je dégotte un boulot !"
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 5
@@ -185,26 +1722,6 @@ text = "QUIT"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-[node name="Credits" type="Label" parent="."]
-visible = false
-offset_left = 351.0
-offset_top = 247.0
-offset_right = 1616.0
-offset_bottom = 1064.0
-theme_override_fonts/font = ExtResource("4_0tusq")
-theme_override_font_sizes/font_size = 60
-text = "Jeu crée par:
-
-Thomas Warin
-Bastien Warin
-Charles Ulldemolins 
-Thibault Blanché
-Tom Guillen
-Edwige Boivin
-Emma Rouzaud
-Eric Gadbin"
-horizontal_alignment = 1
 
 [node name="Pastis" type="Button" parent="."]
 offset_left = 1613.0
