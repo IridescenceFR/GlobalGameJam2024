@@ -46,9 +46,29 @@ func spawn_bubble():
 	round_number += 1
 	
 func give_spectators_color():
-	for spect in spectators_array:
-		spect.index_newAura = 0
-		spect.show_aura()
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	
+	# RÉPARTITION DES COULEURS
+	var spect_count_color_0 = random.randi_range(1, 4)
+	var spect_count_color_1 = random.randi_range(5, 7)
+	var spect_count_color_2 = 20 - (spect_count_color_0 + spect_count_color_1)
+	var count_array = [spect_count_color_0, spect_count_color_1, spect_count_color_2]
+	
+	# RANDOM QUEL COULEUR QUEL %
+	randomize()
+	count_array.shuffle()
+	var color_array = []
+	for i in range(3):
+		var tmp_array = []
+		tmp_array.resize(count_array[i])
+		tmp_array.fill(i)
+		color_array += tmp_array
+
+	color_array.shuffle()
+	for i in range(spectators_array.size()):
+		spectators_array[i].index_newAura = color_array[i]
+		spectators_array[i].show_aura()
 
 func remove_spectators_color():
 	for spect in spectators_array:
