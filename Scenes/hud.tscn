@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=3 uid="uid://caelarc3j8mx8"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_0156j"]
+[ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="2_ayp7f"]
+[ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
+[ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ayck"]
+bg_color = Color(0.960784, 0.741176, 0.254902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.698039, 0.545098, 0.180392, 0.72549)
+shadow_size = 10
+shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vsfi"]
+bg_color = Color(0.960784, 0.741176, 0.254902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(1, 1, 1, 0.568627)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbnwh"]
+bg_color = Color(0.960784, 0.741176, 0.254902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.698039, 0.545098, 0.180392, 0.568627)
+shadow_size = 10
+shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_0156j")
+
+[node name="Scene" type="Sprite2D" parent="."]
+position = Vector2(962, 537)
+texture = ExtResource("2_ayp7f")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -753.5
+offset_top = 48.0
+offset_right = 753.5
+offset_bottom = 279.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_wishy")
+theme_override_font_sizes/font_size = 130
+text = "Onion Comedy Club"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -801.0
+offset_top = 283.0
+offset_right = 797.0
+offset_bottom = 453.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wishy")
+theme_override_font_sizes/font_size = 100
+text = "
+"
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = 463.0
+offset_right = 25.0
+offset_bottom = 605.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 100
+text = "3"
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 440.0
+offset_top = 296.0
+offset_right = 678.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 50
+text = "High score"
+
+[node name="StartButton" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_q5dav")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -514.0
+offset_right = 250.0
+offset_bottom = -358.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ayck")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vsfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ayck")
+text = "START"
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -306.0
+offset_right = 193.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_dbnwh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vsfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ayck")
+text = "QUIT"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]

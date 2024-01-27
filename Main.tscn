@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://naq75j8d22yn"]
+[gd_scene load_steps=3 format=3 uid="uid://doyccyq6ewsqa"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Script" path="res://Main.gd" id="1_gatbq"]
+[ext_resource type="PackedScene" uid="uid://caelarc3j8mx8" path="res://Scenes/hud.tscn" id="2_mgiws"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_gatbq")
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="CrowdTimer" type="Timer" parent="."]
+
+[node name="BubbleTimer" type="Timer" parent="."]
+
+[node name="StartPosition" type="Marker2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("2_mgiws")]
