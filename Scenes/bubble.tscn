@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckjq0ruu3ovpt"]
+
+[ext_resource type="Script" path="res://scripts/showJoke.gd" id="1_5p1fy"]
+
+[node name="Button" type="Button"]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+text = "bla bla bla"
+
+[node name="showJoke" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("1_5p1fy")
+
+[node name="hideJoke" type="Timer" parent="."]
+wait_time = 10.0
