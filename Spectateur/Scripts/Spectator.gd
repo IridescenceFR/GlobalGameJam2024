@@ -55,13 +55,11 @@ func _ready():
 		textureSpectatorArrayBack = [textureSpectator1fonce, textureSpectator2fonce, textureSpectator3fonce, 
 		textureSpectator4fonce, textureSpectator5fonce, textureSpectator6fonce, textureSpectator7fonce, 
 		textureSpectator8fonce]
-		var rand_index = randi() % textureSpectatorArrayBack.size()
-		get_child(0,false).texture = load(textureSpectatorArrayBack[rand_index])
+		get_child(0,false).texture = load(textureSpectatorArrayBack.pick_random())
 	else:
 		textureSpectatorArrayFront = [textureSpectator1, textureSpectator2, textureSpectator3, textureSpectator4,
 		textureSpectator5, textureSpectator6, textureSpectator7, textureSpectator8]
-		var rand_index = randi() % textureSpectatorArrayFront.size()
-		get_child(0,false).texture = load(textureSpectatorArrayFront[rand_index])
+		get_child(0,false).texture = load(textureSpectatorArrayFront.pick_random())
 	currentPosition = position
 
 
@@ -76,7 +74,7 @@ func _process(delta):
 	if position.y > currentPosition.y + idleRange:
 		is_go_up = true
 	
-	position += direction * (idleRange + randi_range(speedRange,-speedRange)) * delta
+	position += direction * (idleSpeed + randi_range(speedRange,-speedRange)) * delta
 	
 
 func show_aura():

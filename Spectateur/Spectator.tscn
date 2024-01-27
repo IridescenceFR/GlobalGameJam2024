@@ -5,7 +5,7 @@
 
 [node name="Spectator" type="Node2D"]
 script = ExtResource("1_5uy1o")
-idleSpeed = 100.0
+idleSpeed = 20.0
 idleRange = 10
 speedRange = 10
 

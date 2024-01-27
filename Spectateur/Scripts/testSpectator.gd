@@ -1,7 +1,6 @@
 extends Node2D
 
 #@onready var spectator = %Spectator
-@export var basePosition : Vector2 = Vector2(250, 920)
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
 signal show_aura()
 
@@ -13,7 +12,7 @@ func _ready():
 	create_spectators()
 
 func create_spectators():
-	var newPos : Vector2 = basePosition
+	var newPos : Vector2 = Vector2(250, 920)
 	var spectator_scene : PackedScene = load("res://Spectateur/Spectator.tscn")
 	
 	for i in range(10):

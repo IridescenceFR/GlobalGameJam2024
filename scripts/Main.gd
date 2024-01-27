@@ -1,6 +1,14 @@
 extends Node
 
 var score = 0;
+var spectators_array : Array
+
+signal show_aura()
+#signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
+signal suppress_aura()
+
+func _ready():
+	create_spectators()
 
 func game_over():
 	$ScoreTimer.stop()
@@ -54,3 +62,29 @@ func _on_start_new_round():
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES
 	spawn_bubble()
+
+func create_spectators():
+	var newPos : Vector2 = Vector2(250, 920)
+	var spectator_scene : PackedScene = load("res://Spectateur/Spectator.tscn")
+	
+	for i in range(10):
+		var newSpec = spectator_scene.instantiate()
+		newSpec.position = newPos
+		newSpec.is_back = false
+		spectators_array.push_back(newSpec)
+		add_child(newSpec)
+		show_aura.connect(newSpec._on_test_spectateur_show_aura)
+		suppress_aura.connect(newSpec._on_test_spectateur_suppress_aura)
+		newPos.x += 155
+		
+	newPos = Vector2(120, 1000)
+	
+	for i in range(10):
+		var newSpec = spectator_scene.instantiate()
+		newSpec.position = newPos
+		newSpec.is_back = true
+		spectators_array.push_back(newSpec)
+		add_child(newSpec)
+		show_aura.connect(newSpec._on_test_spectateur_show_aura)
+		suppress_aura.connect(newSpec._on_test_spectateur_suppress_aura)
+		newPos.x += 185
