@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://caelarc3j8mx8"]
 
-[ext_resource type="Script" path="res://HUD.gd" id="1_0156j"]
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="2_ayp7f"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
-[ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://PASTIS_MINUIT_DIX_V12.mp3" id="5_44upb"]
+[ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
 
@@ -165,7 +165,7 @@ offset_bottom = 757.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6alj5")
 
 [node name="music_pastis" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_44upb")
+stream = ExtResource("5_h0d0u")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]

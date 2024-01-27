@@ -12,4 +12,3 @@ func _on_score_timer_timeout():
 func _on_hud_start_game():
 	$HUD.update_score(score)
 	$ScoreTimer.start()
-
