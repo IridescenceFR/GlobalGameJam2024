@@ -2,7 +2,8 @@ extends Node
 
 var score = 0;
 var spectators_array : Array
-var round = 0
+var round_number = 0
+var color_list = range(3)
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -22,13 +23,13 @@ func _on_score_timer_timeout():
 
 func _on_hud_start_game():
 	score = 0
-	round = 0
+	round_number = 0
 	$HUD.update_score(score)
 	$ScoreTimer.start()
+	give_spectators_color()
 	spawn_bubble()
 
 func spawn_bubble():
-	var color_list = range(3)
 	randomize()
 	color_list.shuffle()
 	var pos_x = 0
@@ -42,9 +43,17 @@ func spawn_bubble():
 		add_child(bubble)
 		pos_x += 400
 	$OutOfTimeTimer.start()
-	round += 1
+	round_number += 1
+	
+func give_spectators_color():
+	for spect in spectators_array:
+		spect.index_newAura = 0
+		spect.show_aura()
 
-@warning_ignore("unused_parameter")
+func remove_spectators_color():
+	for spect in spectators_array:
+		spect.suppres_aura()
+
 func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
 	print(color)
@@ -56,19 +65,23 @@ func _on_bubble_player_joke(color):
 	$NewJokeTimer.start()
 
 func _on_start_new_round():
+	remove_spectators_color()
+	
 	# SUPPRESSION DES ANCIENNES RÉPONSES 
 	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
 	for b in array_of_nodes:
 		b.queue_free()
+	
 	# CACHE LE SCORE 
 	
-	if round == 10:
+	if round_number == 10:
 		game_over()
 	else :
 		$BreatheBetweenJokesTimer.start()
 
 func _on_breathe_between_jokes_timer_timeout():
-	# RESTART DES BULLES
+	# RESTART DES BULLES + SPECTATOR
+	give_spectators_color()
 	spawn_bubble()
 
 func create_spectators():
