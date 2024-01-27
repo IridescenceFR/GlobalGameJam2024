@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=16 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="2_ayp7f"]
@@ -27,6 +27,8 @@ corner_radius_bottom_left = 50
 shadow_color = Color(1, 1, 1, 0.568627)
 shadow_size = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13w1b"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbnwh"]
 bg_color = Color(0.960784, 0.741176, 0.254902, 1)
 corner_radius_top_left = 50
@@ -37,7 +39,39 @@ shadow_color = Color(0.698039, 0.545098, 0.180392, 0.568627)
 shadow_size = 10
 shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6alj5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pfbbd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtkf7"]
+bg_color = Color(0.729412, 0.392157, 0.262745, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.729412, 0.392157, 0.262745, 0.568627)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_few6s"]
+bg_color = Color(0.729412, 0.392157, 0.262745, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7ie3"]
+bg_color = Color(0.729412, 0.392157, 0.262745, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1yq4"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0156j")
@@ -129,6 +163,7 @@ theme_override_font_sizes/font_size = 110
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ayck")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1vsfi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2ayck")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_13w1b")
 text = "START"
 
 [node name="QuitButton" type="Button" parent="."]
@@ -149,20 +184,63 @@ theme_override_font_sizes/font_size = 110
 theme_override_styles/normal = SubResource("StyleBoxFlat_dbnwh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1vsfi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2ayck")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pfbbd")
 text = "QUIT"
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[node name="Credits" type="Label" parent="."]
+visible = false
+offset_left = 351.0
+offset_top = 247.0
+offset_right = 1616.0
+offset_bottom = 1064.0
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 60
+text = "Jeu crée par:
+
+Thomas Warin
+Bastien Warin
+Charles Ulldemolins 
+Thibault Blanché
+Tom Guillen
+Edwige Boivin
+Emma Rouzaud
+Eric Gadbin"
+horizontal_alignment = 1
+
 [node name="Pastis" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 281.0
-offset_top = 558.0
-offset_right = 408.0
-offset_bottom = 757.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6alj5")
+offset_left = 1613.0
+offset_top = 950.0
+offset_right = 1885.0
+offset_bottom = 1054.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtkf7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_few6s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7ie3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m1yq4")
+text = "CREDITS
+"
+
+[node name="CreditButtonQuit" type="Button" parent="."]
+visible = false
+offset_left = 1399.0
+offset_top = 941.0
+offset_right = 1884.0
+offset_bottom = 1052.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_qtkf7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_few6s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7ie3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m1yq4")
+text = "RETURN TO MENU
+"
 
 [node name="music_pastis" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_h0d0u")
@@ -170,3 +248,4 @@ stream = ExtResource("5_h0d0u")
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Pastis" to="." method="_on_pastis_pressed"]
+[connection signal="pressed" from="CreditButtonQuit" to="." method="_on_credit_button_quit_pressed"]

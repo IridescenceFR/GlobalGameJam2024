@@ -47,8 +47,18 @@ func show_game_over():
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 
-
-
 func _on_pastis_pressed():
+	$StartButton.hide()
+	$QuitButton.hide()
+	$Credits.show()
+	$CreditButtonQuit.show()
 	$music_pastis.play()
-	pass # Replace with function body.
+
+
+func _on_credit_button_quit_pressed():
+	$StartButton.show()
+	$QuitButton.show()
+	$Credits.hide()
+	$CreditButtonQuit.hide()
+	$Pastis.show()
+
