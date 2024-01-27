@@ -2,11 +2,8 @@ extends Node2D
 
 class_name Spectator
 
-# Récupération des node d'auras dans des variables 
-@onready var auraRouge : Sprite2D = %auraRouge
-@onready var auraVert : Sprite2D = %auraVerte
-@onready var auraBleu : Sprite2D = %auraBleu
-
+# Déclaration d'une liste qui contiendra les nodes d'aura
+var auraArray : Array
 
 @export var idleSpeed = 50.0
 @export var idleRange = 20
@@ -36,24 +33,22 @@ var textureSpectator6fonce = "res://Spectateur/Sprites/Spectateur6fonce.png"
 var textureSpectator7fonce = "res://Spectateur/Sprites/Spectateur7fonce.png"
 var textureSpectator8fonce = "res://Spectateur/Sprites/Spectateur8fonce.png"
 
-@onready var dark_layer = %darkLayer
 
 # Déclaration d'une array contenant les variables contenant le chemin des ressources
 var textureSpectatorArrayBack : Array
 var textureSpectatorArrayFront : Array
 
-# Déclaration d'une variable aura courante qui contiendra le node d'aura couramment affiché, 
-var currentAura : Sprite2D
 
 # Déclaration d'une variable qui contiendra l'indice de la prochaine aura à affiché dans l'array
-var index_newAura : int = 0
+var index_newAura : int = -1
 
-# Déclaration d'une liste qui contiendra les nodes d'aura
-var auraArray : Array
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	auraArray = ["res://Spectateur/Sprites/redAura.png", "res://Spectateur/Sprites/greenAura.png",
+	"res://Spectateur/Sprites/blueAura.png"]
+	
 	#met une texture aléatoire au node SpectatorSprite2D
 	is_go_up = randi_range(0,1)
 	if is_back:
@@ -82,50 +77,20 @@ func _process(delta):
 		is_go_up = true
 	
 	position += direction * (idleRange + randi_range(speedRange,-speedRange)) * delta
-
-# Lance la fonction affichant les nodes d'aura avec comme argument un node aléatoire à la fin de timer TimeShowColor
-func _on_timer_show_aura_timeout():
-	auraArray = [auraRouge, auraVert, auraBleu]
-	var randIndex = randi() % auraArray.size()
-	set_new_aura(auraArray[randIndex])
-	$TimerHideAura.start()
-
-# Lance la fonction rendant invisible le nodes d'aura courant à la fin de timer TimeShowColor
-func _on_timer_hide_aura_timeout():
-	supress_current_aura()
-	#$TimerShowAura.start()
 	
-	
-# Rend invisible le node d'aura courrament affiché et rend visible le node passé en argument 
-func set_new_aura(newAura : Sprite2D):
-	if currentAura != null :
-		if newAura != currentAura :
-			currentAura.set_visible(false)
-			newAura.set_visible(true)
-			currentAura = newAura
-	else :
-		newAura.set_visible(true)
-		currentAura = newAura
 
-# Rend invisible le node d'aura couramment affiché
-func supress_current_aura():
-	if currentAura != null:
-		currentAura.set_visible(false)
-		currentAura = null
+func show_aura():
+	get_child(0).add_child(Sprite2D.new())
+	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
 
-# Ecoute le signal add_aura et update le node d'aura affiché selon l'argument reçu 
-#func _on_test_spectateur_add_aura(color):
-	#auraArray = [auraRouge, auraVert, auraBleu]
-	#set_new_aura(auraArray[color])
-	##$TimerHideAura.start()
 	
+func suppres_aura():
+	get_child(0).get_child(0).queue_free()
 
 # Ecoute le signal suppress_aura et rend invisible le node d'aura courant
 func _on_test_spectateur_suppress_aura():
-	supress_current_aura()
-
+	suppres_aura()
 
 func _on_test_spectateur_show_aura():
-	auraArray = [auraRouge, auraVert, auraBleu]
-	set_new_aura(auraArray[index_newAura])
-	pass # Replace with function body.
+	show_aura()
+

@@ -1,49 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnggq8r54lmmq"]
+[gd_scene load_steps=3 format=3 uid="uid://cnggq8r54lmmq"]
 
 [ext_resource type="Script" path="res://Spectateur/Scripts/Spectator.gd" id="1_5uy1o"]
 [ext_resource type="Texture2D" uid="uid://bu18gg7lwj41s" path="res://Spectateur/Sprites/Spectateur1.png" id="2_1dyp0"]
-[ext_resource type="Texture2D" uid="uid://dj352tuywj1o8" path="res://Spectateur/Sprites/redAura.png" id="3_n5v58"]
-[ext_resource type="Texture2D" uid="uid://bb63a0awmcyn7" path="res://Spectateur/Sprites/greenAura.png" id="4_umv0j"]
-[ext_resource type="Texture2D" uid="uid://tvrp007x3v5h" path="res://Spectateur/Sprites/blueAura.png" id="5_t45a7"]
 
 [node name="Spectator" type="Node2D"]
 script = ExtResource("1_5uy1o")
-idleSpeed = 20.0
+idleSpeed = 100.0
 idleRange = 10
 speedRange = 10
 
 [node name="SpectatorSprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_1dyp0")
-
-[node name="auraRouge" type="Sprite2D" parent="SpectatorSprite2D"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(4.99998, -22.5)
-scale = Vector2(0.5, 0.45)
-texture = ExtResource("3_n5v58")
-
-[node name="auraVerte" type="Sprite2D" parent="SpectatorSprite2D"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(4.99998, -22.5)
-scale = Vector2(0.5, 0.45)
-texture = ExtResource("4_umv0j")
-
-[node name="auraBleu" type="Sprite2D" parent="SpectatorSprite2D"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(4.99998, -22.5)
-scale = Vector2(0.5, 0.45)
-texture = ExtResource("5_t45a7")
-
-[node name="TimerShowAura" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
-[node name="TimerHideAura" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
-[connection signal="timeout" from="TimerShowAura" to="." method="_on_timer_show_aura_timeout"]
-[connection signal="timeout" from="TimerHideAura" to="." method="_on_timer_hide_aura_timeout"]
