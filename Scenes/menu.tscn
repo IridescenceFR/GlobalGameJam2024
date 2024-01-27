@@ -82,3 +82,6 @@ theme_override_fonts/font = ExtResource("3_vp3ov")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_11ov8")
 text = "QUIT"
+
+[connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/Quit" to="HUD" method="_on_quit_pressed"]
