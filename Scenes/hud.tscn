@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=11 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0156j"]
 [ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="2_ayp7f"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
+[ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://PASTIS_MINUIT_DIX_V12.mp3" id="5_44upb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
 
@@ -35,6 +36,8 @@ corner_radius_bottom_left = 50
 shadow_color = Color(0.698039, 0.545098, 0.180392, 0.568627)
 shadow_size = 10
 shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6alj5"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0156j")
@@ -91,6 +94,7 @@ theme_override_font_sizes/font_size = 100
 text = "3"
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -104,7 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_0tusq")
 theme_override_font_sizes/font_size = 50
-text = "High score"
+text = "0"
 
 [node name="StartButton" type="Button" parent="."]
 material = SubResource("CanvasItemMaterial_q5dav")
@@ -151,5 +155,18 @@ text = "QUIT"
 wait_time = 3.0
 one_shot = true
 
+[node name="Pastis" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 281.0
+offset_top = 558.0
+offset_right = 408.0
+offset_bottom = 757.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6alj5")
+
+[node name="music_pastis" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_44upb")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Pastis" to="." method="_on_pastis_pressed"]

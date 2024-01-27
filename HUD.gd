@@ -8,13 +8,14 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
-	$ScoreLabel.hide()	
+	#$ScoreLabel.hide()	
 	$Countdown.show()		
 	show_message("The show will begin in")
 
 	await $MessageTimer.timeout
 	$Message.hide()
 	$Countdown.hide()
+	$ScoreLabel.show()		
 	start_game.emit()
 
 func _process(delta):
@@ -45,3 +46,9 @@ func show_game_over():
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
+
+
+
+func _on_pastis_pressed():
+	$music_pastis.play()
+	pass # Replace with function body.
