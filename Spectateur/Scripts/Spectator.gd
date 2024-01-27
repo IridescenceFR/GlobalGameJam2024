@@ -46,8 +46,8 @@ var index_newAura : int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	auraArray = ["res://Spectateur/Sprites/violetHalo.png", "res://Spectateur/Sprites/greenHalo.png",
-	"res://Spectateur/Sprites/blueHalo.png"]
+	auraArray = ["res://Spectateur/Sprites/violetBrain.png", "res://Spectateur/Sprites/greenBrain.png",
+	"res://Spectateur/Sprites/blueBrain.png"]
 	
 	#met une texture aléatoire au node SpectatorSprite2D
 	is_go_up = randi_range(0,1)
@@ -79,6 +79,7 @@ func _process(delta):
 
 func show_aura():
 	get_child(0).add_child(Sprite2D.new())
+	get_child(0).get_child(0).position.y -= 30
 	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
 
 	
