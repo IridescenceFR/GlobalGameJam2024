@@ -80,6 +80,11 @@ func remove_spectators_color():
 		spect.suppres_aura()
 
 func _on_bubble_player_joke(color):
+	# DISABLE DES RÉPONSES 
+	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
+	for b in array_of_nodes:
+		b.disabled = true
+	
 	# CALCULE DU SCORE
 	if color == right_answer:
 		score += 1000
