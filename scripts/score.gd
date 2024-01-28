@@ -31,7 +31,7 @@ func _ready():
 		1000:
 			get_child(0).texture = load("res://assets/Score_1000.png")
 		_:
-			print("j'ai pas le score")
+			pass
 			
 	rotation = randf_range(-0.3, 0.3)
 	#$timerScore.start()
