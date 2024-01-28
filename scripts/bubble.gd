@@ -6,11 +6,13 @@ var color:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	fill_progress_bar()
+	fill_progress_bar(delta)
 	pass
 
-func fill_progress_bar():
-	$Panel/ProgressBar.value += 0.22
+func fill_progress_bar(delta):
+	print(delta)
+	print($Panel/ProgressBar.value)
+	$Panel/ProgressBar.value += 25 * delta
 	
 func _on_pressed():
 	$ClickBubble.play()
