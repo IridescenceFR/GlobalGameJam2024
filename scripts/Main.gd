@@ -40,7 +40,7 @@ func spawn_bubble():
 		var bubble_scene: PackedScene = preload("res://Scenes/bubble.tscn")
 		var bubble = bubble_scene.instantiate()
 		bubble.color = color
-		bubble.position = Vector2(410 + pos_x, 200)
+		bubble.position = Vector2(560 + pos_x, 150)
 		bubble.connect_to_parent(self, color)
 		bubble.add_to_group("bubbles")
 		add_child(bubble)
@@ -227,11 +227,11 @@ func create_score(scoring : int, type: int):
 		if onion.position.x > 960:
 			pos.x = onion.position.x - 200
 			if type == 3:
-				pos.x -= 200
+				pos.x -= 250
 		else:
 			pos.x = onion.position.x + 200
 			if type == 3:
-				pos.x += 200
+				pos.x += 250
 		pos.y = onion.position.y
 	newScore.score = scoring
 	newScore.position = pos
