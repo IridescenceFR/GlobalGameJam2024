@@ -174,7 +174,7 @@ func create_spotlight():
 	
 	
 func _on_spotlight_timer_timeout():
-	if combo > 4:
+	if combo == 4:
 		score += 300
 		create_score(300, 3)
 	$HUD.update_score(score)
@@ -207,13 +207,6 @@ func _on_spotlight_under():
 func _on_spotlight_outer():
 	under_spotlight = false
 	combo = 0
-
-#func create_score(scoring : int, pos : Vector2):
-	#var Score_scene : PackedScene = load("res://Scenes/score.tscn")
-	#var newScore= Score_scene.instantiate()
-	#newScore.position = pos
-	#newScore.score = scoring
-	#add_child(newScore)
 
 #type_0 = bouton; type_1 = bonus; type_2 = light; type_3 = light_bonus
 func create_score(scoring : int, type: int):
