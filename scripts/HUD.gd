@@ -20,7 +20,7 @@ func _on_start_button_pressed():
 	$ScoreLabel.show()
 	start_game.emit()
 
-func _process(delta):
+func _process(_delta):
 	$Countdown.text = str("%.0f" % $MessageTimer.time_left)
 	
 func _on_message_timer_timeout():
