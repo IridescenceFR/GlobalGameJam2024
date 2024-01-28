@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lqrmbypqle7e"]
+[gd_scene load_steps=10 format=3 uid="uid://dhrekiduk58l0"]
 
 [ext_resource type="Script" path="res://scripts/Onion.gd" id="1_tsmbn"]
 [ext_resource type="Texture2D" uid="uid://v12d1rk385xe" path="res://assets/Oignon_iddle1.png" id="3_vl6lc"]

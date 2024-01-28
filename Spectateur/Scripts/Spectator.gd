@@ -83,7 +83,6 @@ func show_aura():
 	newAura.texture = load(auraArray[index_newAura])
 	add_child(newAura)
 
-	
 func suppres_aura():
 	if newAura != null:
 		newAura.queue_free()

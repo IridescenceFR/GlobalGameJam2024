@@ -17,6 +17,9 @@ signal suppress_aura()
 
 func _ready():
 	create_spectators()
+	var oignon = load("res://Scenes/onion.tscn").instantiate()
+	oignon.add_to_group("oignon")
+	add_child(oignon)
 
 func game_over():
 	$HUD.update_score(score)
@@ -28,7 +31,6 @@ func _on_hud_start_game():
 	$HUD.update_score(score)
 	give_spectators_color()
 	spawn_bubble()
-	add_child(load("res://Scenes/onion.tscn").instantiate())
 
 func spawn_bubble():
 	randomize()
@@ -73,11 +75,10 @@ func give_spectators_color():
 	color_array.shuffle()
 	for i in range(spectators_array.size()):
 		spectators_array[i].index_newAura = color_array[i]
-		spectators_array[i].show_aura()
+	show_aura.emit()
 
 func remove_spectators_color():
-	for spect in spectators_array:
-		spect.suppres_aura()
+	suppress_aura.emit()
 
 func _on_bubble_player_joke(color):
 	# DISABLE DES RÉPONSES 
@@ -91,7 +92,6 @@ func _on_bubble_player_joke(color):
 		create_score(1000, Vector2(950, 100))		
 		var time_left = $OutOfTimeTimer.get_time_left()
 		$OutOfTimeTimer.stop()
-		print(time_left)
 		if time_left > 2 :
 			score += 200
 			create_score(200, Vector2(950, 50))				
@@ -171,7 +171,8 @@ func create_spotlight():
 func _on_spotlight_timer_timeout():
 	if combo > 4:
 		score += 300
-		create_score(300, Vector2(950, 150))
+		var array_of_oignon = get_tree().get_nodes_in_group("oignon")
+		create_score(300, Vector2(array_of_oignon[0].position.x, 500))
 	$HUD.update_score(score)
 	if spotlight_child != null:
 		spotlight_child.free()
@@ -186,10 +187,12 @@ func _on_spotlight_score_timer_timeout():
 		combo += 1
 		if combo > 2:
 			score += 200
-			create_score(200, Vector2(950, 150))		
+			var array_of_oignon = get_tree().get_nodes_in_group("oignon")
+			create_score(300, Vector2(array_of_oignon[0].position.x, 500))
 		else:
 			score += 100
-			create_score(100, Vector2(950, 150))					
+			var array_of_oignon = get_tree().get_nodes_in_group("oignon")
+			create_score(300, Vector2(array_of_oignon[0].position.x, 500))
 	$HUD.update_score(score)
 
 
