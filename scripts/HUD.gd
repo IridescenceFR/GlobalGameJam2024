@@ -8,6 +8,7 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
+	$ScoreFinal.hide()
 
 	$Countdown.show()
 	$Pastis.hide()
@@ -39,10 +40,13 @@ func show_message(text):
 	$MessageTimer.start()
 	
 func show_game_over():
+	$StartButton.text = "RESTART"
 	$StartButton.show()
 	$QuitButton.show()
 	$Title.show()
 	$Pastis.show()
+	$ScoreFinal.show()
+	$ScoreFinal.text = "Final score: " + $ScoreLabel.text
 	$ScoreLabel.hide()	
 
 func _on_pastis_pressed():

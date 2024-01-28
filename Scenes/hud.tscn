@@ -1644,6 +1644,20 @@ theme_override_font_sizes/font_size = 100
 text = "
 "
 
+[node name="ScoreFinal" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -801.0
+offset_top = 354.0
+offset_right = 797.0
+offset_bottom = 524.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
 [node name="Countdown" type="Label" parent="."]
 visible = false
 anchors_preset = 5
@@ -1670,6 +1684,7 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 
 [node name="ScoreBar" type="ProgressBar" parent="ScoreLabel"]
+layout_mode = 0
 offset_left = -52.0
 offset_top = -606.0
 offset_right = 25.0
@@ -1678,6 +1693,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Label" type="Label" parent="ScoreLabel"]
+layout_mode = 0
 offset_left = -140.0
 offset_top = -1.0
 offset_right = -16.0
