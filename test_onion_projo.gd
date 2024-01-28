@@ -44,7 +44,6 @@ func _on_start_timer_timeout():
 func _on_spotlight_timer_timeout():
 	if combo > 8:
 		score += 300
-	print("+300", score)
 	spotlight_child.queue_free()
 	$StartTimer.start()
 
@@ -55,8 +54,6 @@ func _on_spotlight_score_timer_timeout():
 		combo += 1
 		if combo > 2:
 			score += 150
-			print("+150", score)
 		else:
 			score += 100
-			print("+100", score)
 

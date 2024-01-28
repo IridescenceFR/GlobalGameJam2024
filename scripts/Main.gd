@@ -223,7 +223,7 @@ func create_score(scoring : int, type: int):
 			pos.y += 50
 	else:
 		pos = onion.position
-		print(pos)
+
 		if onion.position.x > 960:
 			pos.x = onion.position.x - 200
 			if type == 3:

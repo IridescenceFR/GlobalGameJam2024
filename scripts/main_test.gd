@@ -16,4 +16,4 @@ func _ready():
 
 @warning_ignore("unused_parameter")
 func _on_bubble_player_joke(color, time_left):
-	print(color)
+	pass

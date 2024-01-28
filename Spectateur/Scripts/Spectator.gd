@@ -87,7 +87,7 @@ func suppres_aura():
 	if newAura != null:
 		newAura.queue_free()
 	else:
-		print("l'aura est nul sa mère")
+		pass
 
 # Ecoute le signal suppress_aura et rend invisible le node d'aura courant
 func _on_test_spectateur_suppress_aura():
