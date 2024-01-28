@@ -1,9 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=20 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
+[ext_resource type="Texture2D" uid="uid://cjqeg4qv8msms" path="res://scorebar.png" id="4_gi5a4"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
+[ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
+[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="6_jo6py"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhb3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac86w"]
+bg_color = Color(0.431373, 0.694118, 0.447059, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
 
@@ -1683,15 +1695,6 @@ theme_override_fonts/font = ExtResource("4_0tusq")
 theme_override_font_sizes/font_size = 40
 text = "0"
 
-[node name="ScoreBar" type="ProgressBar" parent="ScoreLabel"]
-layout_mode = 0
-offset_left = -52.0
-offset_top = -606.0
-offset_right = 25.0
-offset_bottom = -12.0
-fill_mode = 3
-show_percentage = false
-
 [node name="Label" type="Label" parent="ScoreLabel"]
 layout_mode = 0
 offset_left = -140.0
@@ -1701,6 +1704,21 @@ offset_bottom = 52.0
 theme_override_fonts/font = ExtResource("4_0tusq")
 theme_override_font_sizes/font_size = 40
 text = "Score :"
+
+[node name="Scorebar" type="Sprite2D" parent="ScoreLabel"]
+position = Vector2(17, -291)
+texture = ExtResource("4_gi5a4")
+
+[node name="ScoreBar" type="ProgressBar" parent="ScoreLabel"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -487.0
+offset_right = 16.0
+offset_bottom = -50.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_qhb3r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ac86w")
+fill_mode = 3
+show_percentage = false
 
 [node name="StartButton" type="Button" parent="."]
 material = SubResource("CanvasItemMaterial_q5dav")
@@ -1782,6 +1800,13 @@ text = "RETURN TO MENU
 
 [node name="music_pastis" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_h0d0u")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i46dt")
+autoplay = true
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jo6py")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]

@@ -5,6 +5,7 @@ signal start_game
 
 
 func _on_start_button_pressed():
+	$ClickButton.play()
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
@@ -20,7 +21,7 @@ func _on_start_button_pressed():
 	$ScoreLabel.show()
 	start_game.emit()
 
-func _process(delta):
+func _process(_delta):
 	$Countdown.text = str("%.0f" % $MessageTimer.time_left)
 	
 func _on_message_timer_timeout():
@@ -47,20 +48,25 @@ func show_game_over():
 	$Pastis.show()
 	$ScoreFinal.show()
 	$ScoreFinal.text = "Final score: " + $ScoreLabel.text
-	$ScoreLabel.hide()	
+	$ScoreLabel.hide()
 
 func _on_pastis_pressed():
+	$ClickButton.play()	
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Credits.show()
 	$CreditButtonQuit.show()
 	$music_pastis.play()
+	$Music.stop()
 
 
 func _on_credit_button_quit_pressed():
+	$ClickButton.play()	
 	$StartButton.show()
 	$QuitButton.show()
 	$Credits.hide()
 	$CreditButtonQuit.hide()
 	$Pastis.show()
+	$music_pastis.stop()
+	$Music.play()
 

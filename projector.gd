@@ -32,22 +32,18 @@ func _process(delta):
 	
 	position += direction * speed * delta
 
-
 func _exit_tree():
 	on_outer_spotlight.emit()
 
-
-
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	$SpotlightConeback.set_visible(true)
 	on_under_spotlight.emit()
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	$SpotlightConeback.set_visible(false)
 	on_outer_spotlight.emit()
 
 func connect_to_parent(parent):
 	if(parent):
-		print("connect")
 		self.on_under_spotlight.connect(parent._on_spotlight_under)
 		self.on_outer_spotlight.connect(parent._on_spotlight_outer)
