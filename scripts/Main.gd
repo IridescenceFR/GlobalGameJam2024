@@ -154,13 +154,22 @@ func create_spectators():
 ################################################################################
 ### Promis je commente demain !!!
 
+
+func create_spotlight():
+	var spotlight = load("res://projector.tscn").instantiate()
+	spotlight.position = Vector2(960,0)
+	spotlight.connect_to_parent(self)
+	spotlight_child = spotlight
+	return spotlight
+	
+	
 func _on_spotlight_timer_timeout():
-	if combo > 8:
+	if combo > 4:
 		score += 300
-	print("+300", score)
+	print("+300 ", score)
 	$HUD.update_score(score)
-	if spotlight_child:
-		spotlight_child.queue_free()
+	if spotlight_child != null:
+		spotlight_child.free()
 	if round_number == 10:
 		game_over()
 	else:
@@ -171,11 +180,11 @@ func _on_spotlight_score_timer_timeout():
 		$SpotlightScoreTimer.start()
 		combo += 1
 		if combo > 2:
-			score += 150
-			print("+150", score)
+			score += 200
+			print("+200 ", score)
 		else:
 			score += 100
-			print("+100", score)
+			print("+100 ", score)
 	$HUD.update_score(score)
 
 
@@ -188,11 +197,3 @@ func _on_spotlight_under():
 func _on_spotlight_outer():
 	under_spotlight = false
 	combo = 0
-
-
-func create_spotlight():
-	var spotlight = load("res://projector.tscn").instantiate()
-	spotlight.position = Vector2(960,0)
-	spotlight.connect_to_parent(self)
-	spotlight_child = spotlight
-	return spotlight
