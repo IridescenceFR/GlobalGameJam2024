@@ -83,7 +83,7 @@ func show_aura():
 	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
 
 func suppres_aura():
-	if get_child(0) != null and get_child(0).get_child(0) != null:
+	if get_child_count() > 0 and get_child(0).get_child_count() > 0:
 		get_child(0).get_child(0).free()
 
 # Ecoute le signal suppress_aura et rend invisible le node d'aura courant

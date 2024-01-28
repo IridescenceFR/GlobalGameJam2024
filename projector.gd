@@ -38,11 +38,11 @@ func _exit_tree():
 
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	$SpotlightConeback.set_visible(true)
 	on_under_spotlight.emit()
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	$SpotlightConeback.set_visible(false)
 	on_outer_spotlight.emit()
 
