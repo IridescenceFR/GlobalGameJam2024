@@ -35,7 +35,7 @@ func _ready():
 			
 	scale = Vector2(0.2, 0.2)
 	rotation = randf_range(-0.3, 0.3)
-	$timerScore.start()
+	#$timerScore.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
