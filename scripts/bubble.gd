@@ -10,8 +10,6 @@ func _process(delta):
 	pass
 
 func fill_progress_bar(delta):
-	print(delta)
-	print($Panel/ProgressBar.value)
 	$Panel/ProgressBar.value += 25 * delta
 	
 func _on_pressed():

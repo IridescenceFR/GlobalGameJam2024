@@ -38,6 +38,7 @@ one_shot = true
 
 [node name="SpotlightTimer" type="Timer" parent="."]
 wait_time = 4.1
+one_shot = true
 
 [node name="SpotlightScoreTimer" type="Timer" parent="."]
 

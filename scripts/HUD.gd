@@ -8,7 +8,8 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
-	#$ScoreLabel.hide()
+	$ScoreFinal.hide()
+
 	$Countdown.show()
 	$Pastis.hide()
 	show_message("The show will begin in")
@@ -31,18 +32,22 @@ func _on_quit_pressed():
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
-	
+	$ScoreLabel/ScoreBar.value = (float(score) / 14700 * 100)
+
 func show_message(text):
 	$Message.text = text
 	$Message.show()
 	$MessageTimer.start()
 	
 func show_game_over():
+	$StartButton.text = "RESTART"
 	$StartButton.show()
 	$QuitButton.show()
 	$Title.show()
 	$Pastis.show()
-	$ScoreLabel.hide()
+	$ScoreFinal.show()
+	$ScoreFinal.text = "Final score: " + $ScoreLabel.text
+	$ScoreLabel.hide()	
 
 func _on_pastis_pressed():
 	$StartButton.hide()
