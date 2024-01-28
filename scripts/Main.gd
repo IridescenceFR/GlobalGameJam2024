@@ -88,23 +88,21 @@ func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
 	if color == right_answer:
 		score += 1000
-		print("+1000 ", score)
+		create_score(1000, Vector2(950, 100))		
+		var time_left = $OutOfTimeTimer.get_time_left()
+		$OutOfTimeTimer.stop()
+		print(time_left)
+		if time_left > 2 :
+			score += 200
+			create_score(200, Vector2(950, 50))				
 	elif color == wrong_answer:
 		score += 250
-		print("+250 ", score)
+		create_score(250, Vector2(950, 100))		
 	else :
 		score += 500
-		print("+500 ", score)
-		
+		create_score(500, Vector2(950, 100))		
 	$HUD.update_score(score)
 	
-	# CALCULE DU SCORE
-	var time_left = $OutOfTimeTimer.get_time_left()
-	$OutOfTimeTimer.stop()
-	print(time_left)
-	if time_left > 2 :
-		score += 200
-		print("+200 ", score)
 	
 	# START NEW ROUND
 	$NewJokeTimer.start()
@@ -173,7 +171,7 @@ func create_spotlight():
 func _on_spotlight_timer_timeout():
 	if combo > 4:
 		score += 300
-	#print("+300 ", score)
+		create_score(300, Vector2(950, 150))
 	$HUD.update_score(score)
 	if spotlight_child != null:
 		spotlight_child.free()
@@ -188,10 +186,10 @@ func _on_spotlight_score_timer_timeout():
 		combo += 1
 		if combo > 2:
 			score += 200
-			#print("+200 ", score)
+			create_score(200, Vector2(950, 150))		
 		else:
 			score += 100
-			#print("+100 ", score)
+			create_score(100, Vector2(950, 150))					
 	$HUD.update_score(score)
 
 
@@ -204,3 +202,10 @@ func _on_spotlight_under():
 func _on_spotlight_outer():
 	under_spotlight = false
 	combo = 0
+
+func create_score(scoring : int, pos : Vector2):
+	var Score_scene : PackedScene = load("res://Scenes/score.tscn")
+	var newScore= Score_scene.instantiate()
+	newScore.position = pos
+	newScore.score = scoring
+	add_child(newScore)
