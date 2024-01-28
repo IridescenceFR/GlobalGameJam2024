@@ -23,7 +23,6 @@ func connect_to_parent(parent, given_color):
 		self.add_theme_color_override("font_disabled_color",  Color("#ba65c9"))		
 		self.add_theme_color_override("font_hover_color",  Color("#ba65c9"))
 		var new_stylebox_normal = self.get_theme_stylebox("normal").duplicate()
-		new_stylebox_normal.border_width_top = 3
 		new_stylebox_normal.border_color = Color("#ba65c9")
 		self.add_theme_stylebox_override("normal", new_stylebox_normal)
 	if (given_color == 1) :
@@ -32,7 +31,6 @@ func connect_to_parent(parent, given_color):
 		self.add_theme_color_override("font_disabled_color", Color("#85ba46"))		
 		self.add_theme_color_override("font_hover_color",  Color("#85ba46"))
 		var new_stylebox_normal = self.get_theme_stylebox("normal").duplicate()
-		new_stylebox_normal.border_width_top = 3
 		new_stylebox_normal.border_color = Color("#85ba46")
 		self.add_theme_stylebox_override("normal", new_stylebox_normal)
 	if (given_color == 2) :
@@ -41,7 +39,6 @@ func connect_to_parent(parent, given_color):
 		self.add_theme_color_override("font_disabled_color",  Color("#56a7be"))		
 		self.add_theme_color_override("font_hover_color",  Color("#56a7be"))
 		var new_stylebox_normal = self.get_theme_stylebox("normal").duplicate()
-		new_stylebox_normal.border_width_top = 3
 		new_stylebox_normal.border_color = Color("#56a7be")
 		self.add_theme_stylebox_override("normal", new_stylebox_normal)
 	if (parent) :
