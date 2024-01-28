@@ -17,6 +17,7 @@ signal suppress_aura()
 
 func _ready():
 	create_spectators()
+	add_child(load("res://Scenes/onion.tscn").instantiate())	
 
 func game_over():
 	$HUD.update_score(score)
@@ -28,7 +29,6 @@ func _on_hud_start_game():
 	$HUD.update_score(score)
 	give_spectators_color()
 	spawn_bubble()
-	add_child(load("res://Scenes/onion.tscn").instantiate())
 
 func spawn_bubble():
 	randomize()
