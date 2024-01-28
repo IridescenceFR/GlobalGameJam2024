@@ -148,12 +148,12 @@ func _on_spotlight_timer_timeout():
 		score += 300
 	print("+300", score)
 	$HUD.update_score(score)
-	spotlight_child.queue_free()
+	if spotlight_child:
+		spotlight_child.queue_free()
 	if round_number == 10:
 		game_over()
 	else:
 		$BreatheBetweenJokesTimer.start()
-
 
 func _on_spotlight_score_timer_timeout():
 	if under_spotlight:
