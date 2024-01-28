@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p55obb2wu1l5"
-path="res://.godot/imported/greenHalo.png-58bab86b15296d0e5561852d1781312b.ctex"
+uid="uid://vbc4p1wh3ch8"
+path="res://.godot/imported/blueCrown.png-9d921f37e219e9297d488f36bbaa1491.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spectateur/Sprites/greenHalo.png"
-dest_files=["res://.godot/imported/greenHalo.png-58bab86b15296d0e5561852d1781312b.ctex"]
+source_file="res://Spectateur/Sprites/blueCrown.png"
+dest_files=["res://.godot/imported/blueCrown.png-9d921f37e219e9297d488f36bbaa1491.ctex"]
 
 [params]
 

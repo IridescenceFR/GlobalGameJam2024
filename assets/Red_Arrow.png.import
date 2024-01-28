@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5jogc342gpst"
-path="res://.godot/imported/blueHalo.png-048a1f345ec9c3228c5174cebc15033c.ctex"
+uid="uid://dkeofjuh1q8vi"
+path="res://.godot/imported/Red_Arrow.png-084a39b4ef26f4605319b886bffd1a21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spectateur/Sprites/blueHalo.png"
-dest_files=["res://.godot/imported/blueHalo.png-048a1f345ec9c3228c5174cebc15033c.ctex"]
+source_file="res://assets/Red_Arrow.png"
+dest_files=["res://.godot/imported/Red_Arrow.png-084a39b4ef26f4605319b886bffd1a21.ctex"]
 
 [params]
 

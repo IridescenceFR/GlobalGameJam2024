@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgnk4ng6p5p4y"
-path="res://.godot/imported/violetHalo.png-8318be6c5a4a141eedebff2bf2314d3d.ctex"
+uid="uid://ctdxkpetk612b"
+path="res://.godot/imported/Black_Arrow.png-14cf312b9ed73e11520fcf786b176136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spectateur/Sprites/violetHalo.png"
-dest_files=["res://.godot/imported/violetHalo.png-8318be6c5a4a141eedebff2bf2314d3d.ctex"]
+source_file="res://assets/Black_Arrow.png"
+dest_files=["res://.godot/imported/Black_Arrow.png-14cf312b9ed73e11520fcf786b176136.ctex"]
 
 [params]
 
