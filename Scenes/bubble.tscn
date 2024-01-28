@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckjq0ruu3ovpt"]
+[gd_scene load_steps=9 format=3 uid="uid://ckjq0ruu3ovpt"]
 
 [ext_resource type="FontFile" uid="uid://bno48nt2c2af0" path="res://assets/GarlicSaltExtras-Regular.otf" id="1_23osm"]
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_w28qf"]
 [ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="3_foyub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw1h5"]
-bg_color = Color(0.882353, 0.788235, 0.662745, 1)
+bg_color = Color(0.882353, 0.788235, 0.662745, 0)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -16,21 +16,32 @@ corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
 corner_detail = 20
-shadow_color = Color(0.333333, 0.258824, 0.180392, 0.568627)
+shadow_color = Color(0.333333, 0.258824, 0.180392, 0)
 shadow_size = 3
 shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktc1f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hn03"]
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuq0c"]
+bg_color = Color(0.933333, 0.878431, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6shf"]
+bg_color = Color(0.882353, 0.788235, 0.662745, 1)
+
 [node name="Bubble" type="Button"]
-top_level = true
 clip_children = 2
 offset_left = 246.0
 offset_top = 167.0
 offset_right = 619.0
 offset_bottom = 330.0
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.8, 0.847059, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_23osm")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw1h5")
@@ -41,6 +52,34 @@ text = "Y e a E"
 icon_alignment = 1
 text_direction = 1
 script = ExtResource("1_w28qf")
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 2
+z_index = -1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 373.0
+offset_bottom = 161.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_1hn03")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+show_behind_parent = true
+clip_children = 2
+light_mask = 2
+visibility_layer = 2
+layout_mode = 2
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 376.0
+offset_bottom = 164.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/background = SubResource("StyleBoxFlat_kuq0c")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b6shf")
+fill_mode = 2
+show_percentage = false
 
 [node name="hideJoke" type="Timer" parent="."]
 wait_time = 100.0

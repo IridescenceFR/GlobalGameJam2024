@@ -5,9 +5,13 @@ signal player_joke(color: int, time_left: float)
 var color:int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _process(delta):
+	fill_progress_bar()
 	pass
 
+func fill_progress_bar():
+	$Panel/ProgressBar.value += 0.22
+	
 func _on_pressed():
 	$ClickBubble.play()
 	player_joke.emit(color)
