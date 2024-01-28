@@ -53,13 +53,14 @@ stream = ExtResource("5_w4n1j")
 
 [node name="MalaiseLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_c424c")
+volume_db = 8.0
 
 [node name="SuperRireLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_b84yp")
 
 [node name="VoiceLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bji7t")
-volume_db = 7.0
+volume_db = -7.0
 pitch_scale = 0.8
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
