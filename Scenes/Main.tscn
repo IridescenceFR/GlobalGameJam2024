@@ -17,8 +17,6 @@ texture = ExtResource("3_31qod")
 wait_time = 3.0
 one_shot = true
 
-[node name="ScoreTimer" type="Timer" parent="."]
-
 [node name="CrowdTimer" type="Timer" parent="."]
 
 [node name="BubbleTimer" type="Timer" parent="."]
@@ -37,9 +35,15 @@ one_shot = true
 [node name="BreatheBetweenJokesTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="SpotlightTimer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="SpotlightScoreTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="timeout" from="NewJokeTimer" to="." method="_on_start_new_round"]
 [connection signal="timeout" from="OutOfTimeTimer" to="." method="_on_start_new_round"]
 [connection signal="timeout" from="BreatheBetweenJokesTimer" to="." method="_on_breathe_between_jokes_timer_timeout"]
+[connection signal="timeout" from="SpotlightTimer" to="." method="_on_spotlight_timer_timeout"]
+[connection signal="timeout" from="SpotlightScoreTimer" to="." method="_on_spotlight_score_timer_timeout"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://camhsm3v2es26"]
+[gd_scene load_steps=4 format=3 uid="uid://camhsm3v2es26"]
 
 [ext_resource type="Script" path="res://test_onion_projo.gd" id="1_7gi1g"]
 [ext_resource type="PackedScene" uid="uid://lqrmbypqle7e" path="res://Scenes/onion.tscn" id="2_6shxj"]
 [ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="2_vtmhs"]
-[ext_resource type="PackedScene" uid="uid://dlbhovwlbafwv" path="res://projector.tscn" id="3_xhky3"]
 
 [node name="Test Onion Projo" type="Node2D"]
 script = ExtResource("1_7gi1g")
@@ -17,8 +16,17 @@ texture = ExtResource("2_vtmhs")
 [node name="Onion" parent="." instance=ExtResource("2_6shxj")]
 position = Vector2(960, 550)
 
-[node name="Projector" parent="." instance=ExtResource("3_xhky3")]
-position = Vector2(960, 0)
+[node name="SpotlightTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
-[connection signal="body_entered" from="Projector" to="." method="_on_projector_body_entered"]
-[connection signal="body_exited" from="Projector" to="." method="_on_projector_body_exited"]
+[node name="SpotlightScoreTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="SpotlightTimer" to="." method="_on_spotlight_timer_timeout"]
+[connection signal="timeout" from="SpotlightScoreTimer" to="." method="_on_spotlight_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

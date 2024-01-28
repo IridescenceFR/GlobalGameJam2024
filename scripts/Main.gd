@@ -1,9 +1,13 @@
 extends Node
 
-var score = 0;
+var score: int = 0
+var combo: int = 0
 var spectators_array : Array
 var round_number = 0
 var color_list = range(3)
+var under_spotlight: bool = false
+var spotlight_child
+var round_with_spotlight = [4,6,8,10]
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -13,21 +17,16 @@ func _ready():
 	create_spectators()
 
 func game_over():
-	$ScoreTimer.stop()
 	$HUD.update_score(score)
 	$HUD.show_game_over()
-
-func _on_score_timer_timeout():
-	score += 1
-	$HUD.update_score(score)
 
 func _on_hud_start_game():
 	score = 0
 	round_number = 0
 	$HUD.update_score(score)
-	$ScoreTimer.start()
 	give_spectators_color()
 	spawn_bubble()
+	add_child(load("res://Scenes/onion.tscn").instantiate())
 
 func spawn_bubble():
 	randomize()
@@ -94,15 +93,16 @@ func _on_start_new_round():
 	
 	# CACHE LE SCORE 
 	
-	if round_number == 10:
-		game_over()
-	else :
+	if spotlight_child == null :
 		$BreatheBetweenJokesTimer.start()
 
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES + SPECTATOR
 	give_spectators_color()
 	spawn_bubble()
+	if round_with_spotlight.has(round_number):
+		add_child(create_spotlight())
+		$SpotlightTimer.start()
 
 func create_spectators():
 	var newPos : Vector2 = Vector2(250, 920)
@@ -129,3 +129,51 @@ func create_spectators():
 		show_aura.connect(newSpec._on_test_spectateur_show_aura)
 		suppress_aura.connect(newSpec._on_test_spectateur_suppress_aura)
 		newPos.x += 185
+
+################################################################################
+##########                        SPOTLIGHT                           ##########
+################################################################################
+### Promis je commente demain !!!
+
+func _on_spotlight_timer_timeout():
+	if combo > 8:
+		score += 300
+	print("+300", score)
+	$HUD.update_score(score)
+	spotlight_child.queue_free()
+	if round_number == 10:
+		game_over()
+	else:
+		$BreatheBetweenJokesTimer.start()
+
+
+func _on_spotlight_score_timer_timeout():
+	if under_spotlight:
+		$SpotlightScoreTimer.start()
+		combo += 1
+		if combo > 2:
+			score += 150
+			print("+150", score)
+		else:
+			score += 100
+			print("+100", score)
+	$HUD.update_score(score)
+
+
+func _on_spotlight_under():
+	under_spotlight = true
+	if $SpotlightScoreTimer.time_left == 0:
+		$SpotlightScoreTimer.start()
+
+
+func _on_spotlight_outer():
+	under_spotlight = false
+	combo = 0
+
+
+func create_spotlight():
+	var spotlight = load("res://projector.tscn").instantiate()
+	spotlight.position = Vector2(960,0)
+	spotlight.connect_to_parent(self)
+	spotlight_child = spotlight
+	return spotlight

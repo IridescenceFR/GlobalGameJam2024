@@ -4,6 +4,7 @@ var speed = 550
 
 func _ready():
 	$AnimatedSprite2D.play()
+	position = Vector2(960,550)
 
 func _process(delta):
 	var direction = Vector2.ZERO
