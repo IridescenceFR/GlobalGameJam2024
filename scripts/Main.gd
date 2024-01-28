@@ -9,6 +9,7 @@ var under_spotlight: bool = false
 var spotlight_child
 var round_with_spotlight = [4,6,8,10]
 var right_answer:int = 0
+var wrong_answer:int = 0
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -62,6 +63,8 @@ func give_spectators_color():
 	for i in range(3):
 		if count_array[i] == spect_count_color_2 :
 			right_answer = i
+		if count_array[i] == spect_count_color_0 :
+			wrong_answer = i
 		var tmp_array = []
 		tmp_array.resize(count_array[i])
 		tmp_array.fill(i)
@@ -79,14 +82,22 @@ func remove_spectators_color():
 func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
 	if color == right_answer:
-		score += 100
+		score += 1000
+	elif color == wrong_answer:
+		score += 250
 	else :
-		score += 1
+		score += 500
+		
 	$HUD.update_score(score)
 	
 	# CALCULE DU SCORE
 	var time_left = $OutOfTimeTimer.get_time_left()
 	$OutOfTimeTimer.stop()
+	print(time_left)
+	if time_left > 3 :
+		score += 200
+	elif time_left > 2 :
+		score += 100
 	
 	# START NEW ROUND
 	$NewJokeTimer.start()
