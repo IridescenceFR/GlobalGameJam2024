@@ -11,6 +11,7 @@ var round_with_spotlight = [4,6,8,10]
 var right_answer:int = 0
 var wrong_answer:int = 0
 var onion
+var speakers
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -20,6 +21,10 @@ func _ready():
 	create_spectators()
 	onion = load("res://Scenes/onion.tscn").instantiate()
 	add_child(onion)
+	speakers = get_tree().get_nodes_in_group("speakers")
+	for anim: AnimatedSprite2D in speakers:
+		anim.animation = "default"
+		anim.play()
 
 func game_over():
 	$HUD.update_score(score)
@@ -126,11 +131,15 @@ func _on_start_new_round():
 		$BreatheBetweenJokesTimer.start()
 		if round_with_spotlight.has(round_number + 1):
 			$HUD.show_message("Bonus spotlight!", 1.5)
+			for anim: AnimatedSprite2D in speakers:
+				anim.animation = "warning"
 
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES + SPECTATOR
 	give_spectators_color()
 	spawn_bubble()
+	for anim: AnimatedSprite2D in speakers:
+		anim.animation = "default"
 	if round_with_spotlight.has(round_number):
 		add_child(create_spotlight())
 		$SpotlightTimer.start()

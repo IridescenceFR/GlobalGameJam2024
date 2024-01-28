@@ -1,14 +1,38 @@
-[gd_scene load_steps=10 format=3 uid="uid://i14lbbymr5jc"]
+[gd_scene load_steps=13 format=3 uid="uid://i14lbbymr5jc"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_e2ixv"]
 [ext_resource type="PackedScene" uid="uid://caelarc3j8mx8" path="res://Scenes/hud.tscn" id="2_cllfx"]
 [ext_resource type="Texture2D" uid="uid://bqxcw5jbfjfu5" path="res://assets/Scene.png" id="3_31qod"]
-[ext_resource type="PackedScene" path="res://Scenes/score.tscn" id="4_lrsfv"]
+[ext_resource type="PackedScene" uid="uid://cpgpdrihm2rok" path="res://Scenes/score.tscn" id="4_lrsfv"]
 [ext_resource type="AudioStream" uid="uid://bhva582n6jrgl" path="res://assets/Rires.mp3" id="5_b84yp"]
 [ext_resource type="AudioStream" uid="uid://bajcuj6nrccx6" path="res://assets/voiceline1.mp3" id="5_bji7t"]
 [ext_resource type="AudioStream" uid="uid://cuw6jmmevye8t" path="res://assets/rires_moyens_V2.mp3" id="5_w4n1j"]
 [ext_resource type="AudioStream" uid="uid://ruxkxutabaj5" path="res://assets/malaise.mp3" id="6_c424c"]
 [ext_resource type="AudioStream" uid="uid://34uxyh8ogqf5" path="res://assets/riendutout.mp3" id="8_orhub"]
+[ext_resource type="Texture2D" uid="uid://bj5k5tkd8reuu" path="res://assets/Enceinte1.png" id="10_0cowy"]
+[ext_resource type="Texture2D" uid="uid://cji5p2rru6a2k" path="res://assets/Enceinte2.png" id="11_8xp4s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4q7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0cowy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0cowy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8xp4s")
+}],
+"loop": true,
+"name": &"warning",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e2ixv")
@@ -68,6 +92,15 @@ volume_db = 15.0
 stream = ExtResource("5_bji7t")
 volume_db = -7.0
 pitch_scale = 0.8
+
+[node name="LeftSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
+position = Vector2(343, 656)
+sprite_frames = SubResource("SpriteFrames_t4q7a")
+
+[node name="RightSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
+position = Vector2(1576, 646)
+sprite_frames = SubResource("SpriteFrames_t4q7a")
+flip_h = true
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
