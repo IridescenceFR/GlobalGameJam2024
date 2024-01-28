@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 580
+var speed = 300
 var direction: Vector2
 var girouette: int = 2
 

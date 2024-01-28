@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 550
+var speed = 580
 
 func _ready():
 	$AnimatedSprite2D.play()
