@@ -47,6 +47,7 @@ func spawn_bubble():
 		pos_x += 400
 	$OutOfTimeTimer.start()
 	round_number += 1
+	$VoiceLine.play()
 	
 func give_spectators_color():
 	var random = RandomNumberGenerator.new()
@@ -82,6 +83,7 @@ func remove_spectators_color():
 
 func _on_bubble_player_joke(color):
 	# DISABLE DES RÉPONSES 
+	$VoiceLine.stop()
 	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
 	for b in array_of_nodes:
 		b.disabled = true
@@ -89,6 +91,7 @@ func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
 	if color == right_answer:
 		score += 1000
+		$SuperRireLine.play()
 		create_score(1000, Vector2(950, 100))		
 		var time_left = $OutOfTimeTimer.get_time_left()
 		$OutOfTimeTimer.stop()
@@ -96,9 +99,11 @@ func _on_bubble_player_joke(color):
 			score += 200
 			create_score(200, Vector2(950, 50))				
 	elif color == wrong_answer:
+		$MalaiseLine.play()
 		score += 250
 		create_score(250, Vector2(950, 100))		
 	else :
+		$RireLine.play()
 		score += 500
 		create_score(500, Vector2(950, 100))		
 	$HUD.update_score(score)

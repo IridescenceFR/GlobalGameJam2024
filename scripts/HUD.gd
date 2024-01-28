@@ -47,7 +47,7 @@ func show_game_over():
 	$Pastis.show()
 	$ScoreFinal.show()
 	$ScoreFinal.text = "Final score: " + $ScoreLabel.text
-	$ScoreLabel.hide()	
+	$ScoreLabel.hide()
 
 func _on_pastis_pressed():
 	$StartButton.hide()
@@ -55,6 +55,7 @@ func _on_pastis_pressed():
 	$Credits.show()
 	$CreditButtonQuit.show()
 	$music_pastis.play()
+	$Music.stop()
 
 
 func _on_credit_button_quit_pressed():
@@ -63,4 +64,6 @@ func _on_credit_button_quit_pressed():
 	$Credits.hide()
 	$CreditButtonQuit.hide()
 	$Pastis.show()
+	$music_pastis.stop()
+	$Music.play()
 
