@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://lqrmbypqle7e"]
+[gd_scene load_steps=10 format=3 uid="uid://lqrmbypqle7e"]
 
 [ext_resource type="Script" path="res://scripts/Onion.gd" id="1_tsmbn"]
 [ext_resource type="Texture2D" uid="uid://v12d1rk385xe" path="res://assets/Oignon_iddle1.png" id="3_vl6lc"]
 [ext_resource type="Texture2D" uid="uid://bvxlgc7juhift" path="res://assets/Oignon_iddle2.png" id="4_flfg4"]
+[ext_resource type="Texture2D" uid="uid://d26x3mwl12lw1" path="res://assets/Oignon_walk1.png" id="4_sa4mk"]
+[ext_resource type="Texture2D" uid="uid://6c7vc4gn7vub" path="res://assets/Oignon_walk2.png" id="5_g8kaa"]
+[ext_resource type="Texture2D" uid="uid://tq6lsxj5o33v" path="res://assets/Oignon_walk3.png" id="6_trnxp"]
+[ext_resource type="Texture2D" uid="uid://dr78id3h6scqn" path="res://assets/Oignon_walk4.png" id="7_t3ldd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k15x7"]
 animations = [{
@@ -19,14 +23,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_vl6lc")
+"texture": ExtResource("4_sa4mk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_flfg4")
+"texture": ExtResource("5_g8kaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_trnxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t3ldd")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70wen"]
