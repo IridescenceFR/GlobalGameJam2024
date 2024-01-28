@@ -82,7 +82,6 @@ func show_aura():
 	get_child(0).get_child(0).position.y -= 20
 	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
 
-	
 func suppres_aura():
 	if get_child(0) != null and get_child(0).get_child(0) != null:
 		get_child(0).get_child(0).free()

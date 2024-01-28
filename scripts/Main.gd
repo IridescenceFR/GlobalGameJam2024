@@ -73,11 +73,10 @@ func give_spectators_color():
 	color_array.shuffle()
 	for i in range(spectators_array.size()):
 		spectators_array[i].index_newAura = color_array[i]
-		spectators_array[i].show_aura()
+	show_aura.emit()
 
 func remove_spectators_color():
-	for spect in spectators_array:
-		spect.suppres_aura()
+	suppress_aura.emit()
 
 func _on_bubble_player_joke(color):
 	# DISABLE DES RÉPONSES 
