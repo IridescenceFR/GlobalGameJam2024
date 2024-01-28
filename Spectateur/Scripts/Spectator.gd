@@ -42,7 +42,7 @@ var textureSpectatorArrayFront : Array
 # Déclaration d'une variable qui contiendra l'indice de la prochaine aura à affiché dans l'array
 var index_newAura : int = -1
 
-
+var newAura
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -78,13 +78,16 @@ func _process(delta):
 	
 
 func show_aura():
-	get_child(0).add_child(Sprite2D.new())
-	get_child(0).get_child(0).position.y -= 20
-	get_child(0).get_child(0).texture = load(auraArray[index_newAura])
+	newAura = Sprite2D.new()
+	newAura.position.y -= 20
+	newAura.texture = load(auraArray[index_newAura])
+	add_child(newAura)
 
 func suppres_aura():
-	if get_child_count() > 0 and get_child(0).get_child_count() > 0:
-		get_child(0).get_child(0).free()
+	if newAura != null:
+		newAura.queue_free()
+	else:
+		print("l'aura est nul sa mère")
 
 # Ecoute le signal suppress_aura et rend invisible le node d'aura courant
 func _on_test_spectateur_suppress_aura():
