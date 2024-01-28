@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i14lbbymr5jc"]
+[gd_scene load_steps=10 format=3 uid="uid://i14lbbymr5jc"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_e2ixv"]
 [ext_resource type="PackedScene" uid="uid://caelarc3j8mx8" path="res://Scenes/hud.tscn" id="2_cllfx"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bajcuj6nrccx6" path="res://assets/voiceline1.mp3" id="5_bji7t"]
 [ext_resource type="AudioStream" uid="uid://cuw6jmmevye8t" path="res://assets/rires_moyens_V2.mp3" id="5_w4n1j"]
 [ext_resource type="AudioStream" uid="uid://ruxkxutabaj5" path="res://assets/malaise.mp3" id="6_c424c"]
+[ext_resource type="AudioStream" uid="uid://34uxyh8ogqf5" path="res://assets/riendutout.mp3" id="8_orhub"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e2ixv")
@@ -57,6 +58,10 @@ volume_db = 8.0
 
 [node name="SuperRireLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_b84yp")
+
+[node name="NothingLine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_orhub")
+volume_db = 15.0
 
 [node name="VoiceLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bji7t")

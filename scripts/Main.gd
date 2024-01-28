@@ -220,5 +220,4 @@ func create_score(scoring : int, pos : Vector2):
 
 
 func _on_out_of_time_timer_timeout():
-	$RireLine.play()	
 	_on_start_new_round()

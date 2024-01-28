@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 [ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
-[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="6_jo6py"]
+[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="6_jo6py"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
 
