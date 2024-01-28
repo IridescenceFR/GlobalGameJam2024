@@ -5,6 +5,7 @@ signal start_game
 
 
 func _on_start_button_pressed():
+	$ClickButton.play()
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Title.hide()
@@ -50,6 +51,7 @@ func show_game_over():
 	$ScoreLabel.hide()
 
 func _on_pastis_pressed():
+	$ClickButton.play()	
 	$StartButton.hide()
 	$QuitButton.hide()
 	$Credits.show()
@@ -59,6 +61,7 @@ func _on_pastis_pressed():
 
 
 func _on_credit_button_quit_pressed():
+	$ClickButton.play()	
 	$StartButton.show()
 	$QuitButton.show()
 	$Credits.hide()

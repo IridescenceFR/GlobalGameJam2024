@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=17 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 [ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
+[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="6_jo6py"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q5dav"]
 
@@ -1787,6 +1788,9 @@ stream = ExtResource("5_h0d0u")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_i46dt")
 autoplay = true
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jo6py")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
