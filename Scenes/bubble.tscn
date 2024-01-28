@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bno48nt2c2af0" path="res://assets/GarlicSaltExtras-Regular.otf" id="1_23osm"]
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_w28qf"]
-[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="3_foyub"]
+[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="3_foyub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw1h5"]
 bg_color = Color(0.882353, 0.788235, 0.662745, 0)

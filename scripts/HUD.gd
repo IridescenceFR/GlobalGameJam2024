@@ -13,10 +13,9 @@ func _on_start_button_pressed():
 
 	$Countdown.show()
 	$Pastis.hide()
-	show_message("The show will begin in")
+	show_message("The show will begin in", 3)
 
 	await $MessageTimer.timeout
-	$Message.hide()
 	$Countdown.hide()
 	$ScoreLabel.show()
 	start_game.emit()
@@ -35,9 +34,10 @@ func update_score(score):
 	$ScoreLabel.text = str(score)
 	$ScoreLabel/ScoreBar.value = (float(score) / 14700 * 100)
 
-func show_message(text):
+func show_message(text, time):
 	$Message.text = text
 	$Message.show()
+	$MessageTimer.set_wait_time(time)
 	$MessageTimer.start()
 	
 func show_game_over():

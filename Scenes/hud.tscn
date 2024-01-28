@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqeg4qv8msms" path="res://scorebar.png" id="4_gi5a4"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 [ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
-[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="6_jo6py"]
+[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="6_jo6py"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhb3r"]
 
@@ -1646,15 +1646,16 @@ visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -801.0
-offset_top = 283.0
-offset_right = 797.0
-offset_bottom = 453.0
+offset_left = -799.0
+offset_top = 157.0
+offset_right = 799.0
+offset_bottom = 327.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_wishy")
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("4_0tusq")
+theme_override_font_sizes/font_size = 120
 text = "
 "
+horizontal_alignment = 1
 
 [node name="ScoreFinal" type="Label" parent="."]
 visible = false
@@ -1672,17 +1673,20 @@ horizontal_alignment = 1
 
 [node name="Countdown" type="Label" parent="."]
 visible = false
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -25.0
-offset_top = 463.0
-offset_right = 25.0
-offset_bottom = 605.0
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -327.0
+offset_right = 139.0
+offset_bottom = 327.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_0tusq")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 400
 text = "3"
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -1810,5 +1814,6 @@ stream = ExtResource("6_jo6py")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="Pastis" to="." method="_on_pastis_pressed"]
 [connection signal="pressed" from="CreditButtonQuit" to="." method="_on_credit_button_quit_pressed"]

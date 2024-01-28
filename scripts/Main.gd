@@ -124,6 +124,8 @@ func _on_start_new_round():
 	
 	if spotlight_child == null :
 		$BreatheBetweenJokesTimer.start()
+		if round_with_spotlight.has(round_number + 1):
+			$HUD.show_message("Bonus spotlight!", 1.5)
 
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES + SPECTATOR
