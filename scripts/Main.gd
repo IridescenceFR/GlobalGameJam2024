@@ -8,6 +8,7 @@ var color_list = range(3)
 var under_spotlight: bool = false
 var spotlight_child
 var round_with_spotlight = [4,6,8,10]
+var right_answer:int = 0
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -59,6 +60,8 @@ func give_spectators_color():
 	count_array.shuffle()
 	var color_array = []
 	for i in range(3):
+		if count_array[i] == spect_count_color_2 :
+			right_answer = i
 		var tmp_array = []
 		tmp_array.resize(count_array[i])
 		tmp_array.fill(i)
@@ -75,8 +78,13 @@ func remove_spectators_color():
 
 func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
-	print(color)
+	if color == right_answer:
+		score += 100
+	else :
+		score += 1
+	$HUD.update_score(score)
 	
+	# CALCULE DU SCORE
 	var time_left = $OutOfTimeTimer.get_time_left()
 	$OutOfTimeTimer.stop()
 	
