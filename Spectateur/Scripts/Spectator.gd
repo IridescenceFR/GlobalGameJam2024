@@ -84,7 +84,8 @@ func show_aura():
 
 	
 func suppres_aura():
-	get_child(0).get_child(0).queue_free()
+	if get_child(0) != null and get_child(0).get_child(0) != null:
+		get_child(0).get_child(0).free()
 
 # Ecoute le signal suppress_aura et rend invisible le node d'aura courant
 func _on_test_spectateur_suppress_aura():
