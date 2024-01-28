@@ -217,3 +217,8 @@ func create_score(scoring : int, pos : Vector2):
 	newScore.position = pos
 	newScore.score = scoring
 	add_child(newScore)
+
+
+func _on_out_of_time_timer_timeout():
+	$RireLine.play()	
+	_on_start_new_round()
