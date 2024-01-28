@@ -2,14 +2,14 @@
 
 [ext_resource type="FontFile" uid="uid://bno48nt2c2af0" path="res://assets/GarlicSaltExtras-Regular.otf" id="1_23osm"]
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_w28qf"]
-[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="3_foyub"]
+[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="3_foyub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw1h5"]
 bg_color = Color(0.882353, 0.788235, 0.662745, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
@@ -36,10 +36,10 @@ bg_color = Color(0.882353, 0.788235, 0.662745, 1)
 
 [node name="Bubble" type="Button"]
 clip_children = 2
-offset_left = 246.0
-offset_top = 167.0
-offset_right = 619.0
-offset_bottom = 330.0
+offset_left = -185.0
+offset_top = -80.0
+offset_right = 188.0
+offset_bottom = 83.0
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_23osm")
@@ -53,6 +53,7 @@ text = "Y e a E"
 icon_alignment = 1
 text_direction = 1
 script = ExtResource("1_w28qf")
+metadata/_edit_group_ = true
 
 [node name="Panel" type="Panel" parent="."]
 clip_children = 2

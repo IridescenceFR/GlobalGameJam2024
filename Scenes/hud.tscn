@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqeg4qv8msms" path="res://scorebar.png" id="4_gi5a4"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 [ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
-[ext_resource type="AudioStream" uid="uid://cn3a64wg6lq70" path="res://assets/bubble_select.mp3" id="6_jo6py"]
+[ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="6_jo6py"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhb3r"]
 
