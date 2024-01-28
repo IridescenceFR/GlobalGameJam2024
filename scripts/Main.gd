@@ -10,6 +10,7 @@ var spotlight_child
 var round_with_spotlight = [4,6,8,10]
 var right_answer:int = 0
 var wrong_answer:int = 0
+var onion
 
 signal show_aura()
 #signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
@@ -17,9 +18,8 @@ signal suppress_aura()
 
 func _ready():
 	create_spectators()
-	var oignon = load("res://Scenes/onion.tscn").instantiate()
-	oignon.add_to_group("oignon")
-	add_child(oignon)
+	onion = load("res://Scenes/onion.tscn").instantiate()
+	add_child(onion)
 
 func game_over():
 	$HUD.update_score(score)
@@ -89,18 +89,18 @@ func _on_bubble_player_joke(color):
 	# CALCULE DU SCORE
 	if color == right_answer:
 		score += 1000
-		create_score(1000, Vector2(950, 100))		
+		create_score(1000, 0)		
 		var time_left = $OutOfTimeTimer.get_time_left()
 		$OutOfTimeTimer.stop()
 		if time_left > 2 :
 			score += 200
-			create_score(200, Vector2(950, 50))				
+			create_score(200, 1)				
 	elif color == wrong_answer:
 		score += 250
-		create_score(250, Vector2(950, 100))		
+		create_score(250, 0)		
 	else :
 		score += 500
-		create_score(500, Vector2(950, 100))		
+		create_score(500, 0)		
 	$HUD.update_score(score)
 	
 	
@@ -171,8 +171,7 @@ func create_spotlight():
 func _on_spotlight_timer_timeout():
 	if combo > 4:
 		score += 300
-		var array_of_oignon = get_tree().get_nodes_in_group("oignon")
-		create_score(300, Vector2(array_of_oignon[0].position.x, 500))
+		create_score(300, 3)
 	$HUD.update_score(score)
 	if spotlight_child != null:
 		spotlight_child.free()
@@ -187,12 +186,10 @@ func _on_spotlight_score_timer_timeout():
 		combo += 1
 		if combo > 2:
 			score += 200
-			var array_of_oignon = get_tree().get_nodes_in_group("oignon")
-			create_score(300, Vector2(array_of_oignon[0].position.x, 500))
+			create_score(200, 2)
 		else:
 			score += 100
-			var array_of_oignon = get_tree().get_nodes_in_group("oignon")
-			create_score(300, Vector2(array_of_oignon[0].position.x, 500))
+			create_score(100, 2)
 	$HUD.update_score(score)
 
 
@@ -206,9 +203,36 @@ func _on_spotlight_outer():
 	under_spotlight = false
 	combo = 0
 
-func create_score(scoring : int, pos : Vector2):
+#func create_score(scoring : int, pos : Vector2):
+	#var Score_scene : PackedScene = load("res://Scenes/score.tscn")
+	#var newScore= Score_scene.instantiate()
+	#newScore.position = pos
+	#newScore.score = scoring
+	#add_child(newScore)
+
+#type_0 = bouton; type_1 = bonus; type_2 = light; type_3 = light_bonus
+func create_score(scoring : int, type: int):
+	var pos = Vector2.ZERO
 	var Score_scene : PackedScene = load("res://Scenes/score.tscn")
 	var newScore= Score_scene.instantiate()
-	newScore.position = pos
+	if type < 2:
+		pos = get_viewport().get_mouse_position()
+		if type == 0:
+			pos.y -= 50
+		else:
+			pos.y += 50
+	else:
+		pos = onion.position
+		print(pos)
+		if onion.position.x > 960:
+			pos.x = onion.position.x - 200
+			if type == 3:
+				pos.x -= 200
+		else:
+			pos.x = onion.position.x + 200
+			if type == 3:
+				pos.x += 200
+		pos.y = onion.position.y
 	newScore.score = scoring
+	newScore.position = pos
 	add_child(newScore)

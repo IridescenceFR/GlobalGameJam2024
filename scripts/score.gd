@@ -19,21 +19,20 @@ var score : int = -1
 func _ready():
 	match score:
 		100:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_100.png")
 		200:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_200.png")
 		250:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_250.png")
 		300:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_300.png")
 		500:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_500.png")
 		1000:
-			get_child(0).texture = load("res://assets/le100.png")
+			get_child(0).texture = load("res://assets/Score_1000.png")
 		_:
 			print("j'ai pas le score")
 			
-	scale = Vector2(0.2, 0.2)
 	rotation = randf_range(-0.3, 0.3)
 	#$timerScore.start()
 
