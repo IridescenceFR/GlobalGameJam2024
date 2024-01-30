@@ -66,7 +66,7 @@ script = ExtResource("1_e2ixv")
 [node name="Scene" type="Sprite2D" parent="."]
 clip_children = 2
 z_index = -1
-position = Vector2(960, 537)
+position = Vector2(960, 540)
 texture = ExtResource("3_31qod")
 
 [node name="StartTimer" type="Timer" parent="."]
