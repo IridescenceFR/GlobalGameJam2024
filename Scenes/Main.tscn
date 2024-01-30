@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://i14lbbymr5jc"]
+[gd_scene load_steps=25 format=3 uid="uid://i14lbbymr5jc"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_e2ixv"]
 [ext_resource type="PackedScene" uid="uid://caelarc3j8mx8" path="res://Scenes/hud.tscn" id="2_cllfx"]
@@ -10,7 +10,33 @@
 [ext_resource type="AudioStream" uid="uid://ruxkxutabaj5" path="res://assets/malaise.mp3" id="6_c424c"]
 [ext_resource type="AudioStream" uid="uid://34uxyh8ogqf5" path="res://assets/riendutout.mp3" id="8_orhub"]
 [ext_resource type="Texture2D" uid="uid://bj5k5tkd8reuu" path="res://assets/Enceinte1.png" id="10_0cowy"]
+[ext_resource type="AudioStream" uid="uid://lm445ktmla4l" path="res://assets/voiceline2.mp3" id="10_7efmv"]
 [ext_resource type="Texture2D" uid="uid://cji5p2rru6a2k" path="res://assets/Enceinte2.png" id="11_8xp4s"]
+[ext_resource type="AudioStream" uid="uid://d1kq2f0x2iu11" path="res://assets/voiceline3.mp3" id="11_i8evi"]
+[ext_resource type="AudioStream" uid="uid://b00djw05ukoek" path="res://assets/voiceline4.mp3" id="12_ps6fn"]
+[ext_resource type="AudioStream" uid="uid://pwyt810gxufs" path="res://assets/voiceline5.mp3" id="13_1u5rs"]
+[ext_resource type="AudioStream" uid="uid://bwxvt1jpxnyfd" path="res://assets/voiceline6.mp3" id="14_yaysr"]
+[ext_resource type="AudioStream" uid="uid://dvtunj5r21mip" path="res://assets/score1.mp3" id="15_dmv07"]
+[ext_resource type="AudioStream" uid="uid://wlbovebdank4" path="res://assets/score2.mp3" id="16_35482"]
+[ext_resource type="AudioStream" uid="uid://ivuqk7d8yin5" path="res://assets/score3.mp3" id="17_xmed2"]
+[ext_resource type="AudioStream" uid="uid://bolt04j4bqu70" path="res://assets/score4.mp3" id="18_yfn7t"]
+[ext_resource type="AudioStream" uid="uid://bovqq1and7y4v" path="res://assets/score5.mp3" id="19_fdd2p"]
+[ext_resource type="AudioStream" uid="uid://bxfo70p64galp" path="res://assets/SPOTLIGHT.mp3" id="20_yy321"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kgak6"]
+streams_count = 6
+stream_0/stream = ExtResource("5_bji7t")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_7efmv")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("11_i8evi")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("12_ps6fn")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("13_1u5rs")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("14_yaysr")
+stream_5/weight = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t4q7a"]
 animations = [{
@@ -67,7 +93,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="SpotlightTimer" type="Timer" parent="."]
-wait_time = 4.1
+wait_time = 4.2
 one_shot = true
 
 [node name="SpotlightScoreTimer" type="Timer" parent="."]
@@ -83,19 +109,39 @@ volume_db = 8.0
 
 [node name="SuperRireLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_b84yp")
+volume_db = -5.0
 
 [node name="NothingLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_orhub")
 volume_db = 15.0
 
 [node name="VoiceLine" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_bji7t")
+stream = SubResource("AudioStreamRandomizer_kgak6")
 volume_db = -7.0
 pitch_scale = 0.8
+
+[node name="ScoreSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_dmv07")
+
+[node name="ScoreSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_35482")
+
+[node name="ScoreSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_xmed2")
+
+[node name="ScoreSound4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_yfn7t")
+
+[node name="ScoreSound5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_fdd2p")
+
+[node name="SpotlightAlert" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_yy321")
 
 [node name="LeftSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
 position = Vector2(343, 656)
 sprite_frames = SubResource("SpriteFrames_t4q7a")
+animation = &"warning"
 
 [node name="RightSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
 position = Vector2(1576, 646)

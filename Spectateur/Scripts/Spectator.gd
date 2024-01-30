@@ -83,16 +83,7 @@ func show_aura():
 	newAura.texture = load(auraArray[index_newAura])
 	add_child(newAura)
 
-func suppres_aura():
+func suppress_aura():
 	if newAura != null:
 		newAura.queue_free()
-	else:
-		pass
-
-# Ecoute le signal suppress_aura et rend invisible le node d'aura courant
-func _on_test_spectateur_suppress_aura():
-	suppres_aura()
-
-func _on_test_spectateur_show_aura():
-	show_aura()
 

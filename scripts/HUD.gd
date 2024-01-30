@@ -58,10 +58,11 @@ func _on_pastis_pressed():
 	$CreditButtonQuit.show()
 	$music_pastis.play()
 	$Music.stop()
+	$ScoreFinal.hide()
 
 
 func _on_credit_button_quit_pressed():
-	$ClickButton.play()	
+	$ClickButton.play()
 	$StartButton.show()
 	$QuitButton.show()
 	$Credits.hide()
@@ -69,4 +70,6 @@ func _on_credit_button_quit_pressed():
 	$Pastis.show()
 	$music_pastis.stop()
 	$Music.play()
+	if $ScoreFinal.text != null:
+		$ScoreFinal.show()
 

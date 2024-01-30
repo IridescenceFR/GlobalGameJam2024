@@ -7,16 +7,23 @@ var round_number = 0
 var color_list = range(3)
 var under_spotlight: bool = false
 var spotlight_child
-var round_with_spotlight = [4,6,8,10]
+const round_with_spotlight = [4,6,8,10]
 var right_answer:int = 0
 var wrong_answer:int = 0
 var onion
 var speakers
+var is_hardmode_active: bool = false
+var is_spotlight_madness_active: bool = false
+var is_speedmode_active: bool = false
+const hardmode_color = [5, 7, 8]
+const spotlight_madness = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+# signal qui demande au spectateur de montrer leur aura
 signal show_aura()
-#signal cherchant à déclancher le changement de la couleur de l'aura d'un spectateur
+# signal qui demande au spectateur de supprimer leur aura
 signal suppress_aura()
 
+# function qui se déclanche à la création de Main
 func _ready():
 	create_spectators()
 	onion = load("res://Scenes/onion.tscn").instantiate()
@@ -29,6 +36,8 @@ func _ready():
 func game_over():
 	$HUD.update_score(score)
 	$HUD.show_game_over()
+	suppress_aura.emit()
+	
 
 func _on_hud_start_game():
 	score = 0
@@ -99,7 +108,6 @@ func _on_bubble_player_joke(color):
 		create_score(1000, 0)		
 		$SuperRireLine.play()
 		var time_left = $OutOfTimeTimer.get_time_left()
-		$OutOfTimeTimer.stop()
 		if time_left > 2 :
 			score += 200
 			create_score(200, 1)				
@@ -112,7 +120,7 @@ func _on_bubble_player_joke(color):
 		score += 500
 		create_score(500, 0)		
 	$HUD.update_score(score)
-	
+	$OutOfTimeTimer.stop()
 	
 	# START NEW ROUND
 	$NewJokeTimer.start()
@@ -126,13 +134,14 @@ func _on_start_new_round():
 		b.queue_free()
 	
 	# CACHE LE SCORE 
-	
-	if spotlight_child == null :
-		$BreatheBetweenJokesTimer.start()
-		if round_with_spotlight.has(round_number + 1):
-			$HUD.show_message("Bonus spotlight!", 1.5)
-			for anim: AnimatedSprite2D in speakers:
-				anim.animation = "warning"
+	if round_number != 10:
+		if spotlight_child == null :
+			$BreatheBetweenJokesTimer.start()
+			if round_with_spotlight.has(round_number + 1):
+				$HUD.show_message("Bonus spotlight!", 1.5)
+				$SpotlightAlert.play()
+				for anim: AnimatedSprite2D in speakers:
+					anim.animation = "warning"
 
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES + SPECTATOR
@@ -154,8 +163,8 @@ func create_spectators():
 		newSpec.is_back = false
 		spectators_array.push_back(newSpec)
 		add_child(newSpec)
-		show_aura.connect(newSpec._on_test_spectateur_show_aura)
-		suppress_aura.connect(newSpec._on_test_spectateur_suppress_aura)
+		show_aura.connect(newSpec.show_aura)
+		suppress_aura.connect(newSpec.suppress_aura)
 		newPos.x += 155
 		
 	newPos = Vector2(120, 1000)
@@ -166,18 +175,16 @@ func create_spectators():
 		newSpec.is_back = true
 		spectators_array.push_back(newSpec)
 		add_child(newSpec)
-		show_aura.connect(newSpec._on_test_spectateur_show_aura)
-		suppress_aura.connect(newSpec._on_test_spectateur_suppress_aura)
+		show_aura.connect(newSpec.show_aura)
+		suppress_aura.connect(newSpec.suppress_aura)
 		newPos.x += 185
 
 ################################################################################
 ##########                        SPOTLIGHT                           ##########
 ################################################################################
-### Promis je commente demain !!!
-
 
 func create_spotlight():
-	var spotlight = load("res://projector.tscn").instantiate()
+	var spotlight = load("res://Scenes/projector.tscn").instantiate()
 	spotlight.position = Vector2(960,0)
 	spotlight.connect_to_parent(self)
 	spotlight_child = spotlight
@@ -188,6 +195,7 @@ func _on_spotlight_timer_timeout():
 	if combo == 4:
 		score += 300
 		create_score(300, 3)
+		$ScoreSound5.play()
 	$HUD.update_score(score)
 	if spotlight_child != null:
 		spotlight_child.free()
@@ -200,6 +208,8 @@ func _on_spotlight_score_timer_timeout():
 	if under_spotlight:
 		$SpotlightScoreTimer.start()
 		combo += 1
+		var ss = "ScoreSound%s" % combo
+		get_node(ss).play()
 		if combo > 2:
 			score += 200
 			create_score(200, 2)
@@ -218,6 +228,10 @@ func _on_spotlight_under():
 func _on_spotlight_outer():
 	under_spotlight = false
 	combo = 0
+
+################################################################################
+##########                        SCORE                               ##########
+################################################################################
 
 #type_0 = bouton; type_1 = bonus; type_2 = light; type_3 = light_bonus
 func create_score(scoring : int, type: int):
@@ -248,4 +262,5 @@ func create_score(scoring : int, type: int):
 
 
 func _on_out_of_time_timer_timeout():
+	$NothingLine.play()
 	_on_start_new_round()

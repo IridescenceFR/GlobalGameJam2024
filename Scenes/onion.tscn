@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lqrmbypqle7e"]
+[gd_scene load_steps=11 format=3 uid="uid://lqrmbypqle7e"]
 
 [ext_resource type="Script" path="res://scripts/Onion.gd" id="1_tsmbn"]
 [ext_resource type="Texture2D" uid="uid://v12d1rk385xe" path="res://assets/Oignon_iddle1.png" id="3_vl6lc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6c7vc4gn7vub" path="res://assets/Oignon_walk2.png" id="5_g8kaa"]
 [ext_resource type="Texture2D" uid="uid://tq6lsxj5o33v" path="res://assets/Oignon_walk3.png" id="6_trnxp"]
 [ext_resource type="Texture2D" uid="uid://dr78id3h6scqn" path="res://assets/Oignon_walk4.png" id="7_t3ldd"]
+[ext_resource type="AudioStream" uid="uid://doj4blsi8aq3y" path="res://assets/bruits_de_pas.mp3" id="8_b303p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k15x7"]
 animations = [{
@@ -36,7 +37,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 6.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70wen"]
@@ -59,3 +60,8 @@ position = Vector2(-34, 120)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_70wen")
 debug_color = Color(0.674815, 0.0034092, 0.96166, 0.419608)
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_b303p")
+
+[connection signal="finished" from="WalkSound" to="." method="_on_walk_sound_finished"]
