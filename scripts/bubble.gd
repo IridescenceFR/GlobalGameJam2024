@@ -43,3 +43,6 @@ func connect_to_parent(parent, given_color):
 		self.add_theme_stylebox_override("normal", new_stylebox_normal)
 	if (parent) :
 		self.player_joke.connect(parent._on_bubble_player_joke)
+
+func be_free():
+	queue_free()

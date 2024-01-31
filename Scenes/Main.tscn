@@ -139,11 +139,13 @@ stream = ExtResource("19_fdd2p")
 stream = ExtResource("20_yy321")
 
 [node name="LeftSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
+z_index = 5
 position = Vector2(343, 656)
 sprite_frames = SubResource("SpriteFrames_t4q7a")
 animation = &"warning"
 
 [node name="RightSpeaker" type="AnimatedSprite2D" parent="." groups=["speakers"]]
+z_index = 5
 position = Vector2(1576, 646)
 sprite_frames = SubResource("SpriteFrames_t4q7a")
 flip_h = true

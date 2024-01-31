@@ -12,7 +12,7 @@ script = ExtResource("1_ex7f0")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 4
 position = Vector2(-1, 307.25)
 scale = Vector2(1, 1.20327)
 texture = ExtResource("2_r1lcc")
@@ -22,7 +22,7 @@ position = Vector2(6, 386.75)
 shape = SubResource("RectangleShape2D_xb1cs")
 
 [node name="SpotlightConeback" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 2
 position = Vector2(-3, 307.25)
 scale = Vector2(1, 1.20327)
 texture = ExtResource("3_mmghx")

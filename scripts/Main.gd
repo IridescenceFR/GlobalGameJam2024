@@ -21,7 +21,7 @@ const spotlight_madness = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # signal qui demande au spectateur de montrer leur aura
 signal show_aura()
 # signal qui demande au spectateur de supprimer leur aura
-signal suppress_aura()
+signal destroy()
 
 # function qui se déclanche à la création de Main
 func _ready():
@@ -33,11 +33,6 @@ func _ready():
 		anim.animation = "default"
 		anim.play()
 
-func game_over():
-	$HUD.update_score(score)
-	$HUD.show_game_over()
-	suppress_aura.emit()
-	
 
 func _on_hud_start_game():
 	score = 0
@@ -46,23 +41,7 @@ func _on_hud_start_game():
 	give_spectators_color()
 	spawn_bubble()
 
-func spawn_bubble():
-	randomize()
-	color_list.shuffle()
-	var pos_x = -186
-	for color in color_list:
-		var bubble_scene: PackedScene = preload("res://Scenes/bubble.tscn")
-		var bubble = bubble_scene.instantiate()
-		bubble.color = color
-		bubble.position = Vector2(560 + pos_x, 100)
-		bubble.connect_to_parent(self, color)
-		bubble.add_to_group("bubbles")
-		add_child(bubble)
-		pos_x += 400
-	$OutOfTimeTimer.start()
-	round_number += 1
-	$VoiceLine.play()
-	
+
 func give_spectators_color():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
@@ -86,20 +65,18 @@ func give_spectators_color():
 		tmp_array.resize(count_array[i])
 		tmp_array.fill(i)
 		color_array += tmp_array
-
+	
 	color_array.shuffle()
 	for i in range(spectators_array.size()):
 		spectators_array[i].index_newAura = color_array[i]
 	show_aura.emit()
 
-func remove_spectators_color():
-	suppress_aura.emit()
 
 func _on_bubble_player_joke(color):
 	# DISABLE DES RÉPONSES 
 	$VoiceLine.stop()
-	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
-	for b in array_of_nodes:
+	var array_of_bubbles = get_tree().get_nodes_in_group("bubbles")
+	for b in array_of_bubbles:
 		b.disabled = true
 	
 	# CALCULE DU SCORE
@@ -125,13 +102,15 @@ func _on_bubble_player_joke(color):
 	# START NEW ROUND
 	$NewJokeTimer.start()
 
+
+func _on_out_of_time_timer_timeout():
+	$NothingLine.play()
+	_on_start_new_round()
+
+
 func _on_start_new_round():
-	remove_spectators_color()
-	
-	# SUPPRESSION DES ANCIENNES RÉPONSES 
-	var array_of_nodes = get_tree().get_nodes_in_group("bubbles")
-	for b in array_of_nodes:
-		b.queue_free()
+	# Supprime les Bulles et l'Aura des spectateurs
+	destroy.emit()
 	
 	# CACHE LE SCORE 
 	if round_number != 10:
@@ -143,6 +122,7 @@ func _on_start_new_round():
 				for anim: AnimatedSprite2D in speakers:
 					anim.animation = "warning"
 
+
 func _on_breathe_between_jokes_timer_timeout():
 	# RESTART DES BULLES + SPECTATOR
 	give_spectators_color()
@@ -153,6 +133,39 @@ func _on_breathe_between_jokes_timer_timeout():
 		add_child(create_spotlight())
 		$SpotlightTimer.start()
 
+
+func game_over():
+	$HUD.update_score(score)
+	$HUD.show_game_over()
+	destroy.emit()
+	
+
+################################################################################
+##########                        BUBBLES                             ##########
+################################################################################
+
+func spawn_bubble():
+	randomize()
+	color_list.shuffle()
+	var pos_x = -186
+	for color in color_list:
+		var bubble_scene: PackedScene = preload("res://Scenes/bubble.tscn")
+		var bubble = bubble_scene.instantiate()
+		bubble.color = color
+		bubble.position = Vector2(560 + pos_x, 100)
+		bubble.connect_to_parent(self, color)
+		destroy.connect(bubble.be_free)
+		bubble.add_to_group("bubbles")
+		add_child(bubble)
+		pos_x += 400
+	$OutOfTimeTimer.start()
+	round_number += 1
+	$VoiceLine.play()
+	
+################################################################################
+##########                        SPECTATOR                           ##########
+################################################################################
+	
 func create_spectators():
 	var newPos : Vector2 = Vector2(250, 920)
 	var spectator_scene : PackedScene = load("res://Spectateur/Spectator.tscn")
@@ -164,7 +177,7 @@ func create_spectators():
 		spectators_array.push_back(newSpec)
 		add_child(newSpec)
 		show_aura.connect(newSpec.show_aura)
-		suppress_aura.connect(newSpec.suppress_aura)
+		destroy.connect(newSpec.suppress_aura)
 		newPos.x += 155
 		
 	newPos = Vector2(120, 1000)
@@ -176,7 +189,7 @@ func create_spectators():
 		spectators_array.push_back(newSpec)
 		add_child(newSpec)
 		show_aura.connect(newSpec.show_aura)
-		suppress_aura.connect(newSpec.suppress_aura)
+		destroy.connect(newSpec.suppress_aura)
 		newPos.x += 185
 
 ################################################################################
@@ -203,6 +216,7 @@ func _on_spotlight_timer_timeout():
 		game_over()
 	else:
 		$BreatheBetweenJokesTimer.start()
+
 
 func _on_spotlight_score_timer_timeout():
 	if under_spotlight:
@@ -259,8 +273,3 @@ func create_score(scoring : int, type: int):
 	newScore.score = scoring
 	newScore.position = pos
 	add_child(newScore)
-
-
-func _on_out_of_time_timer_timeout():
-	$NothingLine.play()
-	_on_start_new_round()
