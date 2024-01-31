@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://caelarc3j8mx8"]
+[gd_scene load_steps=22 format=3 uid="uid://caelarc3j8mx8"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_0156j"]
+[ext_resource type="Texture2D" uid="uid://dfesco5ocyepm" path="res://assets/Fond_fume.png" id="2_lyrk3"]
+[ext_resource type="PackedScene" uid="uid://dp7sd6dyafgpx" path="res://Scenes/difficulties.tscn" id="3_1r5tv"]
 [ext_resource type="FontFile" uid="uid://bvhfemktblvll" path="res://assets/ADELIA.otf" id="3_wishy"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="4_0tusq"]
-[ext_resource type="Texture2D" uid="uid://cjqeg4qv8msms" path="res://scorebar.png" id="4_gi5a4"]
+[ext_resource type="Texture2D" uid="uid://cwy2tfmw63hy6" path="res://assets/Jauge.png" id="5_fqmvj"]
 [ext_resource type="AudioStream" uid="uid://wr5fspo7m4ex" path="res://assets/PASTIS_MINUIT_DIX_V12.mp3" id="5_h0d0u"]
 [ext_resource type="AudioStream" uid="uid://dligpey52x60j" path="res://assets/Petit_swing_jeu_V3.mp3" id="5_i46dt"]
 [ext_resource type="AudioStream" uid="uid://b82v7vix1c7aa" path="res://assets/bubble_select.mp3" id="6_jo6py"]
@@ -86,6 +88,17 @@ shadow_size = 10
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0156j")
+
+[node name="FondSmoke" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_lyrk3")
+
+[node name="Difficulties" parent="." instance=ExtResource("3_1r5tv")]
+offset_left = 1280.0
+offset_top = 643.0
+offset_right = -170.0
+offset_bottom = -221.0
 
 [node name="Credits" type="RichTextLabel" parent="."]
 visible = false
@@ -1712,14 +1725,15 @@ text = "Score :"
 
 [node name="Scorebar" type="Sprite2D" parent="ScoreLabel"]
 position = Vector2(17, -291)
-texture = ExtResource("4_gi5a4")
+rotation = -0.00174533
+texture = ExtResource("5_fqmvj")
 
 [node name="ScoreBar" type="ProgressBar" parent="ScoreLabel"]
 layout_mode = 0
-offset_left = -46.0
-offset_top = -487.0
-offset_right = 16.0
-offset_bottom = -50.0
+offset_left = -50.0
+offset_top = -480.0
+offset_right = 6.0
+offset_bottom = -48.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_qhb3r")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ac86w")
 fill_mode = 3

@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp7sd6dyafgpx"]
+
+[ext_resource type="Script" path="res://Scenes/difficulties.gd" id="1_8qef6"]
+[ext_resource type="Texture2D" uid="uid://koh40nw3vyk2" path="res://assets/Checkbox_Case.png" id="1_s4or7"]
+[ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="2_3wsxj"]
+
+[node name="Difficulties" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1450.0
+offset_bottom = -864.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qef6")
+
+[node name="HardMode" type="Button" parent="."]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_3wsxj")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Hard Mode"
+icon = ExtResource("1_s4or7")
+flat = true
+
+[node name="SpeedMode" type="Button" parent="."]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 56.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("2_3wsxj")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Speed Mode"
+icon = ExtResource("1_s4or7")
+flat = true
+
+[node name="SpotlightMadness" type="Button" parent="."]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 56.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_3wsxj")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Spotlight Madness"
+icon = ExtResource("1_s4or7")
+flat = true
+
+[connection signal="toggled" from="HardMode" to="." method="_on_hard_mode_toggled"]
+[connection signal="toggled" from="SpeedMode" to="." method="_on_speed_mode_toggled"]
+[connection signal="toggled" from="SpotlightMadness" to="." method="_on_spotlight_madness_toggled"]

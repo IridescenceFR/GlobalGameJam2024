@@ -7,7 +7,7 @@ var round_number = 0
 var color_list = range(3)
 var under_spotlight: bool = false
 var spotlight_child
-const round_with_spotlight = [4,6,8,10]
+const ROUND_WITH_SPOTLIGHT = [4,6,8,10]
 var right_answer:int = 0
 var wrong_answer:int = 0
 var onion
@@ -15,13 +15,14 @@ var speakers
 var is_hardmode_active: bool = false
 var is_spotlight_madness_active: bool = false
 var is_speedmode_active: bool = false
-const hardmode_color = [5, 7, 8]
-const spotlight_madness = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# signal qui demande au spectateur de montrer leur aura
+# signal qui demande aux spectateurs de montrer leur aura
 signal show_aura()
-# signal qui demande au spectateur de supprimer leur aura
+# signal qui demande aux spectateurs de supprimer leur aura
+signal suppress_aura()
+# signal qui demande aux bulles de se supprimer et au spectateur de supprimer leur aura
 signal destroy()
+
 
 # function qui se déclanche à la création de Main
 func _ready():
@@ -43,17 +44,19 @@ func _on_hud_start_game():
 
 
 func give_spectators_color():
-	var random = RandomNumberGenerator.new()
-	random.randomize()
-	
+
 	# RÉPARTITION DES COULEURS
-	var spect_count_color_0 = random.randi_range(1, 4)
-	var spect_count_color_1 = random.randi_range(5, 7)
-	var spect_count_color_2 = 20 - (spect_count_color_0 + spect_count_color_1)
+	var spect_count_color_0 = 5
+	var spect_count_color_1 = 7
+	var spect_count_color_2 = 8
+	
+	if !is_hardmode_active:
+		spect_count_color_0 = randi_range(1, 4)
+		spect_count_color_1 = randi_range(5, 7)
+		spect_count_color_2 = 20 - (spect_count_color_0 + spect_count_color_1)
 	var count_array = [spect_count_color_0, spect_count_color_1, spect_count_color_2]
 	
 	# RANDOM QUEL COULEUR QUEL %
-	randomize()
 	count_array.shuffle()
 	var color_array = []
 	for i in range(3):
@@ -70,6 +73,12 @@ func give_spectators_color():
 	for i in range(spectators_array.size()):
 		spectators_array[i].index_newAura = color_array[i]
 	show_aura.emit()
+	if is_speedmode_active:
+		$SpeedTimer.start()
+
+
+func _on_speed_timer_timeout():
+	suppress_aura.emit()
 
 
 func _on_bubble_player_joke(color):
@@ -116,7 +125,7 @@ func _on_start_new_round():
 	if round_number != 10:
 		if spotlight_child == null :
 			$BreatheBetweenJokesTimer.start()
-			if round_with_spotlight.has(round_number + 1):
+			if is_spotlight_madness_active || ROUND_WITH_SPOTLIGHT.has(round_number + 1):
 				$HUD.show_message("Bonus spotlight!", 1.5)
 				$SpotlightAlert.play()
 				for anim: AnimatedSprite2D in speakers:
@@ -129,7 +138,8 @@ func _on_breathe_between_jokes_timer_timeout():
 	spawn_bubble()
 	for anim: AnimatedSprite2D in speakers:
 		anim.animation = "default"
-	if round_with_spotlight.has(round_number):
+		
+	if is_spotlight_madness_active || ROUND_WITH_SPOTLIGHT.has(round_number):
 		add_child(create_spotlight())
 		$SpotlightTimer.start()
 
@@ -138,7 +148,6 @@ func game_over():
 	$HUD.update_score(score)
 	$HUD.show_game_over()
 	destroy.emit()
-	
 
 ################################################################################
 ##########                        BUBBLES                             ##########
@@ -178,6 +187,7 @@ func create_spectators():
 		add_child(newSpec)
 		show_aura.connect(newSpec.show_aura)
 		destroy.connect(newSpec.suppress_aura)
+		suppress_aura.connect(newSpec.suppress_aura)
 		newPos.x += 155
 		
 	newPos = Vector2(120, 1000)
@@ -190,6 +200,7 @@ func create_spectators():
 		add_child(newSpec)
 		show_aura.connect(newSpec.show_aura)
 		destroy.connect(newSpec.suppress_aura)
+		suppress_aura.connect(newSpec.suppress_aura)
 		newPos.x += 185
 
 ################################################################################
@@ -215,7 +226,7 @@ func _on_spotlight_timer_timeout():
 	if round_number == 10:
 		game_over()
 	else:
-		$BreatheBetweenJokesTimer.start()
+		_on_start_new_round()
 
 
 func _on_spotlight_score_timer_timeout():
