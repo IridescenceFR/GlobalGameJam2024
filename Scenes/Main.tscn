@@ -150,6 +150,9 @@ position = Vector2(1576, 646)
 sprite_frames = SubResource("SpriteFrames_t4q7a")
 flip_h = true
 
+[connection signal="hard_mode" from="HUD" to="." method="_on_hud_hard_mode"]
+[connection signal="speed_mode" from="HUD" to="." method="_on_hud_speed_mode"]
+[connection signal="spotlight_madness" from="HUD" to="." method="_on_hud_spotlight_madness"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="timeout" from="NewJokeTimer" to="." method="_on_start_new_round"]
 [connection signal="timeout" from="OutOfTimeTimer" to="." method="_on_out_of_time_timer_timeout"]

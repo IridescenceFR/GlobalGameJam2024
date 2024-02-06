@@ -1827,6 +1827,9 @@ autoplay = true
 [node name="ClickButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jo6py")
 
+[connection signal="hard_mode" from="Difficulties" to="." method="_on_difficulties_hard_mode"]
+[connection signal="speed_mode" from="Difficulties" to="." method="_on_difficulties_speed_mode"]
+[connection signal="spotlight_madness" from="Difficulties" to="." method="_on_difficulties_spotlight_madness"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

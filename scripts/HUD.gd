@@ -3,6 +3,10 @@ extends CanvasLayer
 # Notifies `Main` node that the button has been pressed
 signal start_game
 
+signal hard_mode
+signal speed_mode
+signal spotlight_madness
+
 
 func _on_start_button_pressed():
 	$ClickButton.play()
@@ -11,6 +15,7 @@ func _on_start_button_pressed():
 	$Title.hide()
 	$ScoreFinal.hide()
 	$FondSmoke.hide()
+	$Difficulties.hide()
 
 	$Countdown.show()
 	$Pastis.hide()
@@ -51,6 +56,7 @@ func show_game_over():
 	$ScoreFinal.text = "Final score: " + $ScoreLabel.text
 	$ScoreLabel.hide()
 	$FondSmoke.show()
+	$Difficulties.show()
 
 func _on_pastis_pressed():
 	$ClickButton.play()	
@@ -61,6 +67,7 @@ func _on_pastis_pressed():
 	$music_pastis.play()
 	$Music.stop()
 	$ScoreFinal.hide()
+	$Difficulties.hide()
 
 
 func _on_credit_button_quit_pressed():
@@ -72,6 +79,19 @@ func _on_credit_button_quit_pressed():
 	$Pastis.show()
 	$music_pastis.stop()
 	$Music.play()
+	$Difficulties.show()
 	if $ScoreFinal.text != null:
 		$ScoreFinal.show()
 
+
+
+func _on_difficulties_hard_mode():
+	hard_mode.emit()
+
+
+func _on_difficulties_speed_mode():
+	speed_mode.emit()
+
+
+func _on_difficulties_spotlight_madness():
+	spotlight_madness.emit()
