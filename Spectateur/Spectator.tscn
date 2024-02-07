@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bu18gg7lwj41s" path="res://Spectateur/Sprites/Spectateur1.png" id="2_1dyp0"]
 
 [node name="Spectator" type="Node2D"]
-z_index = 1
+z_index = 5
 script = ExtResource("1_5uy1o")
 idleSpeed = 20.0
 idleRange = 10
