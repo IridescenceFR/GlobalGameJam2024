@@ -289,13 +289,13 @@ func create_score(scoring : int, type: int):
 ##########                        Difficulties                        ##########
 ################################################################################
 
-func _on_hud_hard_mode():
-	is_hardmode_active = !is_hardmode_active
+func _on_hud_hard_mode(is_active):
+	is_hardmode_active = is_active
 
 
-func _on_hud_speed_mode():
-	is_speedmode_active = !is_speedmode_active
+func _on_hud_speed_mode(is_active):
+	is_speedmode_active = is_active
 
 
-func _on_hud_spotlight_madness():
-	is_spotlight_madness_active = !is_spotlight_madness_active
+func _on_hud_spotlight_madness(is_active):
+	is_spotlight_madness_active = is_active

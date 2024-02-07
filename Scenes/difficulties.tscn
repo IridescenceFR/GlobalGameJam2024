@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp7sd6dyafgpx"]
+[gd_scene load_steps=7 format=3 uid="uid://dp7sd6dyafgpx"]
 
 [ext_resource type="Texture2D" uid="uid://koh40nw3vyk2" path="res://assets/Checkbox_Case.png" id="1_s4or7"]
 [ext_resource type="Script" path="res://scripts/difficulties.gd" id="1_sabkf"]
 [ext_resource type="FontFile" uid="uid://btyj261dloxcf" path="res://assets/Candy Beans.otf" id="2_3wsxj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns42p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kik3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jidi5"]
 
 [node name="Difficulties" type="Control"]
 layout_mode = 3
@@ -21,6 +27,7 @@ offset_right = 56.0
 offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("2_3wsxj")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ns42p")
 toggle_mode = true
 text = "Hard Mode"
 icon = ExtResource("1_s4or7")
@@ -33,6 +40,7 @@ offset_right = 56.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("2_3wsxj")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kik3s")
 toggle_mode = true
 text = "Speed Mode"
 icon = ExtResource("1_s4or7")
@@ -45,6 +53,7 @@ offset_right = 56.0
 offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("2_3wsxj")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jidi5")
 toggle_mode = true
 text = "Spotlight Madness"
 icon = ExtResource("1_s4or7")

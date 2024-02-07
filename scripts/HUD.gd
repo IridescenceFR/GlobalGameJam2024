@@ -7,6 +7,8 @@ signal hard_mode
 signal speed_mode
 signal spotlight_madness
 
+var max_score = 15600
+
 
 func _on_start_button_pressed():
 	$ClickButton.play()
@@ -38,7 +40,7 @@ func _on_quit_pressed():
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
-	$ScoreLabel/ScoreBar.value = (float(score) / 14700 * 100)
+	$ScoreLabel/ScoreBar.value = (float(score) / max_score * 100)
 
 func show_message(text, time):
 	$Message.text = text
@@ -85,13 +87,17 @@ func _on_credit_button_quit_pressed():
 
 
 
-func _on_difficulties_hard_mode():
-	hard_mode.emit()
+func _on_difficulties_hard_mode(is_active):
+	hard_mode.emit(is_active)
 
 
-func _on_difficulties_speed_mode():
-	speed_mode.emit()
+func _on_difficulties_speed_mode(is_active):
+	speed_mode.emit(is_active)
 
 
-func _on_difficulties_spotlight_madness():
-	spotlight_madness.emit()
+func _on_difficulties_spotlight_madness(is_active):
+	spotlight_madness.emit(is_active)
+	if is_active:
+		max_score = 20100
+	else:
+		max_score = 15600
